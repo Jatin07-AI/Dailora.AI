@@ -1,0 +1,67 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< Dailora.AI:dailora-automation >--------------------
+[INFO] Building dailora-automation 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ dailora-automation ---
+[INFO] Deleting C:\Users\techc\git\repository\dailora-automation\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dailora-automation ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ dailora-automation ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 7 source files with javac [debug target 17] to target\classes
+[WARNING] system modules path not set in conjunction with -source 17
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dailora-automation ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ dailora-automation ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug target 17] to target\test-classes
+[WARNING] system modules path not set in conjunction with -source 17
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] /C:/Users/techc/git/repository/dailora-automation/src/test/java/tests/LoginTest.java: C:\Users\techc\git\repository\dailora-automation\src\test\java\tests\LoginTest.java uses or overrides a deprecated API.
+[INFO] /C:/Users/techc/git/repository/dailora-automation/src/test/java/tests/LoginTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ dailora-automation ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Sept 10, 2025 3:12:47 PM org.openqa.selenium.manager.SeleniumManager lambda$runCommand$1
+WARNING: There was an error managing msedgedriver (error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_140_WINDOWS)); using driver found in the cache
+Sept 10, 2025 3:12:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 140, returning the closest version; found: 138; Please update to a Selenium version that supports CDP version 140
+Sept 10, 2025 3:12:50 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 139, returning the closest version; found: 138; Please update to a Selenium version that supports CDP version 139
+Attempting SignUp Using: testuser1757497372252@example.com:aaS#2XKv:9698857360
+Running Test On Current Browser:edge
+Attempting SignUp Using: testuser1757497373447@example.com:fp7jz$IM:9626700057
+Running Test On Current Browser:chrome
+Attempting SignUp Using: testuser1757497378320@example.com:ShvYcBKn:9391194290
+Running Test On Current Browser:firefox
+^C

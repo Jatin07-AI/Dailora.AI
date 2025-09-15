@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Attempting Login On: 10-09-2025 16:28:07]]>
+    </line>
+    <line>
+      <![CDATA[Attempting SignUp Using: testuser1757501887730@example.com:2$J%Jr0V:9744868601]]>
+    </line>
+    <line>
+      <![CDATA[Running Test On Current Browser:chrome]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2025-09-10T16:28:02 IST" name="Default suite" finished-at="2025-09-10T16:28:28 IST" duration-ms="25994">
+    <groups>
+    </groups>
+    <test started-at="2025-09-10T16:28:02 IST" name="Default test" finished-at="2025-09-10T16:28:28 IST" duration-ms="25994">
+      <class name="tests.SignUpTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.SignUpTest@7586beff]" started-at="2025-09-10T16:28:02 IST" name="setUp" finished-at="2025-09-10T16:28:07 IST" duration-ms="5088" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="signUpInAc()[pri:0, instance:tests.SignUpTest@7586beff]" started-at="2025-09-10T16:28:07 IST" name="signUpInAc" finished-at="2025-09-10T16:28:27 IST" duration-ms="20277" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Attempting Login On: 10-09-2025 16:28:07]]>
+            </line>
+            <line>
+              <![CDATA[Attempting SignUp Using: testuser1757501887730@example.com:2$J%Jr0V:9744868601]]>
+            </line>
+            <line>
+              <![CDATA[Running Test On Current Browser:chrome]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- signUpInAc -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@7586beff]" started-at="2025-09-10T16:28:27 IST" name="tearDown" finished-at="2025-09-10T16:28:28 IST" duration-ms="564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SignUpTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
