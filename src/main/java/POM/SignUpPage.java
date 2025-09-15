@@ -64,21 +64,37 @@ public class SignUpPage {
 	@FindBy(xpath = "//button[text()='Start 3 Days Free Trial']")
 	private WebElement SUBMITBTN;
 	
+	@FindBy(id = "zs_fl_close")
+	private WebElement CLOSEBTN;
+	
 	public void signUp(String randomName,String email, String phoneNum,String ranPass) throws Throwable{
 		
 		SIGNUPLINK.click();
+//		try {
+//	        WebElement closeBtn = CLOSEBTN;
+//	        
+//	        // Wait maximum 10 seconds for CLOSEBTN
+//	        wb.visibilityOfElement(driver, closeBtn);;
+//	        
+//	        // If visible, click it
+//	        if (closeBtn.isDisplayed()) {
+//	            closeBtn.click();
+//	        }
+//	    } catch (Exception e) {
+//	        // If not visible, just continue
+//	        System.out.println("Close button not found, continuing logout...");
+//	    }
 		NAME.sendKeys(randomName);
 		EMAIL.sendKeys(email);
 		wb.select(COUNTRYCODE,"IN");
 		PhoneNum.sendKeys(phoneNum);
 		PASSWORD.sendKeys(ranPass);
-		EYEICON1.click();
-		Thread.sleep(2000);
+		wb.mouseHoverOnWebElement(driver, EYEICON1);
+		wb.mouseClickOnWebElement(driver, EYEICON1);
 		CNFPASSMSG.sendKeys(ranPass);
-		EYEICON2.click();
-		Thread.sleep(2000);
+		wb.mouseHoverOnWebElement(driver, EYEICON2);
+		wb.mouseClickOnWebElement(driver, EYEICON2);
 		SUBMITBTN.click();
-		Thread.sleep(10000);
 		}
 	
 	

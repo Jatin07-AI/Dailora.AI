@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 10 16:28:02 IST 2025</td>
+<td>Started on:</td><td>Mon Sep 15 17:36:32 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>25 seconds (25994 ms)</td>
+<tr><td>Total time:</td><td>133 seconds (133844 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,19 +76,73 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.SignUpTest.signUpInAc()'><b>signUpInAc</b><br>Test class: tests.SignUpTest<br/>
-<a href="#Output-2092885124" onClick='toggleBox("Output-2092885124", this, "Show output", "Hide output");'>Show output</a>
+<td title='tests.LoginTest.loginTest()'><b>loginTest</b><br>Test class: tests.LoginTest<br>Parameters: jatin123@codiste.com, Jatin@123<br/>
+<a href="#Output-1541232265" onClick='toggleBox("Output-1541232265", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2092885124" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2092885124">
-Attempting Login On: 10-09-2025 16:28:07<br/>
-Attempting SignUp Using: testuser1757501887730@example.com:2$J%Jr0V:9744868601<br/>
-Running Test On Current Browser:chrome<br/>
+<a href="#Output-1541232265" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1541232265">
+Running test on browser: chrome<br/>
+Attempting login on: 15-09-2025 17:37:38<br/>
+Attempting login with username: jatin123@codiste.com : Jatin@123<br/>
+[chrome] Login result for user [jatin123@codiste.com Jatin@123] : Invalid Credentials :Email not found<br/>
+[Thread ID : 1] Invalid Credentials :Email not found<br/>
+[chrome] Login failed → Closing browser<br/>
 </div>
 </td>
 <td></td>
-<td>20</td>
-<td>tests.SignUpTest@7586beff</td></tr>
+<td>31</td>
+<td>tests.LoginTest@7586beff</td></tr>
+<tr>
+<td title='tests.LoginTest.loginTest()'><b>loginTest</b><br>Test class: tests.LoginTest<br>Parameters: jatin.p@codiste.com, Jatin@123<br/>
+<a href="#Output-1160106451" onClick='toggleBox("Output-1160106451", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1160106451" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1160106451">
+Running test on browser: chrome<br/>
+Attempting login on: 15-09-2025 17:36:35<br/>
+Attempting login with username: jatin.p@codiste.com : Jatin@123<br/>
+[chrome] Login result for user [jatin.p@codiste.com Jatin@123] : Login Successful for user :jatin.p@codiste.com<br/>
+[Thread ID : 1] Login Successful for user :jatin.p@codiste.com<br/>
+[chrome] Login successful → Logging out and closing browser<br/>
+</div>
+</td>
+<td></td>
+<td>61</td>
+<td>tests.LoginTest@7586beff</td></tr>
+<tr>
+<td title='tests.LoginTest.loginTest()'><b>loginTest</b><br>Test class: tests.LoginTest<br>Parameters: Jatin@1122, jatin.p@codiste.com<br/>
+<a href="#Output-363616706" onClick='toggleBox("Output-363616706", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-363616706" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-363616706">
+Running test on browser: chrome<br/>
+Attempting login on: 15-09-2025 17:38:11<br/>
+Attempting login with username: Jatin@1122 : jatin.p@codiste.com<br/>
+[chrome] Login result for user [Jatin@1122 jatin.p@codiste.com] : Invalid Email :Email must be valid.<br/>
+[Thread ID : 1] Invalid Email :Email must be valid.<br/>
+[chrome] Login failed → Closing browser<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@7586beff</td></tr>
+<tr>
+<td title='tests.LoginTest.loginTest()'><b>loginTest</b><br>Test class: tests.LoginTest<br>Parameters: jatin123@codiste.com, Jatin@1122<br/>
+<a href="#Output-438874950" onClick='toggleBox("Output-438874950", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-438874950" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-438874950">
+Running test on browser: chrome<br/>
+Attempting login on: 15-09-2025 17:38:14<br/>
+Attempting login with username: jatin123@codiste.com : Jatin@1122<br/>
+[chrome] Login result for user [jatin123@codiste.com Jatin@1122] : Invalid Credentials :Email not found<br/>
+[Thread ID : 1] Invalid Credentials :Email not found<br/>
+[chrome] Login failed → Closing browser<br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>tests.LoginTest@7586beff</td></tr>
 </table><p>
 </body>
 </html>

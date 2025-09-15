@@ -1,4 +1,4 @@
-package POM;
+ package POM;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,9 +47,20 @@ public class LoginPage {
 	    EMAIL.sendKeys(username);
 	    PASSWORD.clear();
 	    PASSWORD.sendKeys(password);
-	    Thread.sleep(2000);
-	    wb.visibilityOfElement(driver, CLOSEBTN);
-	    CLOSEBTN.click();
+//	    try {
+//	        WebElement closeBtn = CLOSEBTN;
+//	        
+//	        // Wait maximum 10 seconds for CLOSEBTN
+//	        wb.visibilityOfElement(driver, closeBtn);;
+//	        
+//	        // If visible, click it
+//	        if (closeBtn.isDisplayed()) {
+//	            closeBtn.click();
+//	        }
+//	    } catch (Exception e) {
+//	        // If not visible, just continue
+//	        System.out.println("Close button not found, continuing login...");
+//	    }
 	    // click submit
 	    SUBMIT.click();
 	}
@@ -73,10 +84,24 @@ public class LoginPage {
 	
 	// Simple logout method
 	public void LogoutFromApp() throws Throwable {
-		LOGOUTDROPDOWN.click();
-		Thread.sleep(1000);
+//		try {
+//	        WebElement closeBtn = CLOSEBTN;
+//	        
+//	        // Wait maximum 10 seconds for CLOSEBTN
+//	        wb.visibilityOfElement(driver, closeBtn);;
+//	        
+//	        // If visible, click it
+//	        if (closeBtn.isDisplayed()) {
+//	            closeBtn.click();
+//	        }
+//	    } catch (Exception e) {
+//	        // If not visible, just continue
+//	        System.out.println("Close button not found, continuing logout...");
+//	    }
+		wb.mouseHoverOnWebElement(driver,LOGOUTDROPDOWN);
+		wb.mouseClickOnWebElement(driver, LOGOUTDROPDOWN);
+		wb.elementTobeClickable(driver, LOGOUTBTN);
 		LOGOUTBTN.click();
-		Thread.sleep(1000);
 		
 	}
 	

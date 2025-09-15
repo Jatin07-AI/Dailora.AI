@@ -27,6 +27,12 @@ public class WebDriverUtilityProgram {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public void elementTobeClickable(WebDriver driver,WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		
+	}
+	
 	public void switchToFrame(WebDriver driver,int index) {
 		driver.switchTo().frame(index);
 	}
