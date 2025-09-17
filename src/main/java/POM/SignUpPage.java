@@ -18,6 +18,8 @@ public class SignUpPage {
 	}
 	
 	WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+	@FindBy(xpath = "//button[text()='Accept All']")
+	private WebElement AcceptAllBTN;
 	
 	@FindBy(linkText = "Signup?")
 	private WebElement SIGNUPLINK;
@@ -69,21 +71,9 @@ public class SignUpPage {
 	
 	public void signUp(String randomName,String email, String phoneNum,String ranPass) throws Throwable{
 		
+		
 		SIGNUPLINK.click();
-//		try {
-//	        WebElement closeBtn = CLOSEBTN;
-//	        
-//	        // Wait maximum 10 seconds for CLOSEBTN
-//	        wb.visibilityOfElement(driver, closeBtn);;
-//	        
-//	        // If visible, click it
-//	        if (closeBtn.isDisplayed()) {
-//	            closeBtn.click();
-//	        }
-//	    } catch (Exception e) {
-//	        // If not visible, just continue
-//	        System.out.println("Close button not found, continuing logout...");
-//	    }
+		AcceptAllBTN.click();
 		NAME.sendKeys(randomName);
 		EMAIL.sendKeys(email);
 		wb.select(COUNTRYCODE,"IN");
@@ -94,6 +84,8 @@ public class SignUpPage {
 		CNFPASSMSG.sendKeys(ranPass);
 		wb.mouseHoverOnWebElement(driver, EYEICON2);
 		wb.mouseClickOnWebElement(driver, EYEICON2);
+		wb.visibilityOfElement(driver, SUBMITBTN);
+		Thread.sleep(5000);
 		SUBMITBTN.click();
 		}
 	

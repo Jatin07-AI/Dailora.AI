@@ -1,4 +1,5 @@
- package POM;
+package POM;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,87 +40,61 @@ public class LoginPage {
 	
 	@FindBy(xpath = "//p[contains(text(),'Email must be')]")
 	private WebElement WRONGEMAIL;
-	
-	// Simple login method
-	// replace your LoginIntoApp(...) with this simple version
-	public void LoginIntoApp(String username, String password) throws Throwable{
-	    EMAIL.clear();
-	    EMAIL.sendKeys(username);
-	    PASSWORD.clear();
-	    PASSWORD.sendKeys(password);
-//	    try {
-//	        WebElement closeBtn = CLOSEBTN;
-//	        
-//	        // Wait maximum 10 seconds for CLOSEBTN
-//	        wb.visibilityOfElement(driver, closeBtn);;
-//	        
-//	        // If visible, click it
-//	        if (closeBtn.isDisplayed()) {
-//	            closeBtn.click();
-//	        }
-//	    } catch (Exception e) {
-//	        // If not visible, just continue
-//	        System.out.println("Close button not found, continuing login...");
-//	    }
-	    // click submit
-	    SUBMIT.click();
-	}
-	
-	//IF LOGIN FAILED DUE TO INVALID CREDNTIALS
-	public String InvalidCredentials() {
-		WebElement tostMsg = MSGLOGINFAILED;
-		wb.visibilityOfElement(driver, tostMsg);
-		String AuthMsg = tostMsg.getText();
-		return AuthMsg;
-		}
 
-	//IF EMAIL IS INVALID OR IN INVALID FORMAT
-	public String WrongMail() {
-		WebElement InvalidEmail = WRONGEMAIL;
-		wb.visibilityOfElement(driver, InvalidEmail);
-		String InvaliMail = InvalidEmail.getText();
-		return InvaliMail;
+	public WebElement getEMAIL() {
+		return EMAIL;
+	}
+
+	public WebElement getPASSWORD() {
+		return PASSWORD;
+	}
+
+	public WebElement getSUBMIT() {
+		return SUBMIT;
+	}
+
+	public WebElement getLOGOUTDROPDOWN() {
+		return LOGOUTDROPDOWN;
+	}
+
+	public WebElement getLOGOUTBTN() {
+		return LOGOUTBTN;
+	}
+
+	public WebElement getCLOSEBTN() {
+		return CLOSEBTN;
+	}
+
+	public WebElement getMSGLOGINFAILED() {
+		return MSGLOGINFAILED;
+	}
+
+	public WebElement getWRONGEMAIL() {
+		return WRONGEMAIL;
 	}
 	
-	
-	// Simple logout method
-	public void LogoutFromApp() throws Throwable {
-//		try {
-//	        WebElement closeBtn = CLOSEBTN;
-//	        
-//	        // Wait maximum 10 seconds for CLOSEBTN
-//	        wb.visibilityOfElement(driver, closeBtn);;
-//	        
-//	        // If visible, click it
-//	        if (closeBtn.isDisplayed()) {
-//	            closeBtn.click();
-//	        }
-//	    } catch (Exception e) {
-//	        // If not visible, just continue
-//	        System.out.println("Close button not found, continuing logout...");
-//	    }
-		wb.mouseHoverOnWebElement(driver,LOGOUTDROPDOWN);
-		wb.mouseClickOnWebElement(driver, LOGOUTDROPDOWN);
-		wb.elementTobeClickable(driver, LOGOUTBTN);
+	public void loginToApp(String username,String password) {
+		EMAIL.sendKeys(username);
+		PASSWORD.sendKeys(password);
+		SUBMIT.click();
+	}
+
+	public void logoutTOApp() throws Throwable{
+		 wb.waitForInvisibilityOfElementByXPath(driver, "//div[contains(@class,'fixed') and contains(@class,'z-[200]')]", 20);
+
+		 // Scroll to dropdown first
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", LOGOUTDROPDOWN);
+
+
+	    // Then wait for logout button to be clickable
+	    wb.elementTobeClickable(driver, LOGOUTDROPDOWN);
+
+	   
+		LOGOUTDROPDOWN.click();
+		
+		// Scroll to dropdown first
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", LOGOUTBTN);
+		 wb.elementTobeClickable(driver, LOGOUTBTN);
 		LOGOUTBTN.click();
-		
 	}
-	
-	public String getLoginResult(String username) {
-		try {
-			return "Invalid Email :" + WrongMail();
-		} catch (Exception e) {
-			
-			try {
-				return "Invalid Credentials :" + InvalidCredentials();
-			} catch (Exception e2) {
-				return "Login Successful for user :" + username;
-			}
-			
-		}
-		
-	}
-
-
-	
 }

@@ -1,43 +1,76 @@
 package tests;
 
-import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import POM.LoginPage;
 import base.BaseTest;
-import dataproviders.DataProviderUtility;
-import javaUtility.JavaUtilityProgram;
+import fileUtility.PropertyFileUtility;
+import webDriverUtility.WebDriverUtilityProgram;
+
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "loginData", dataProviderClass = DataProviderUtility.class)
-    public void loginTest(String username, String password) throws Throwable {
+    @Test
+    public void validLoginTest() throws Throwable {
+        PropertyFileUtility pp = new PropertyFileUtility();
+        String URL = pp.toGetDataFromPropertiesFile("url");
+        String vEMAIL = pp.toGetDataFromPropertiesFile("validEmail");
+        String vPASSWORD = pp.toGetDataFromPropertiesFile("validPassword");
+        WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        wb.implicitlyWait(driver);
+        driver.get(URL);
 
-    	Reporter.log("Running test on browser: " + currentBrowser,true);
-    	
         LoginPage lp = new LoginPage(driver);
-        JavaUtilityProgram jp = new JavaUtilityProgram();
-        String DateAndTime = jp.getCurrentDateAndTime();
-        Reporter.log("Attempting login on: " +DateAndTime,true);
-        Reporter.log("Attempting login with username: " +username +" : "+ password,true);
+        lp.loginToApp(vEMAIL, vPASSWORD);
+        System.out.println(" Login Successful: Valid Email & Valid Password");
+        Thread.sleep(20000);
+        lp.logoutTOApp();
+        System.out.println("Logout From App");
+    }
 
-        // perform login (assumes LoginIntoApp waits for either success or error)
-        lp.LoginIntoApp(username, password);
-        
-        String Result = lp.getLoginResult(username);
-        
-        
-     // log result in console + reporter
-        Reporter.log("[" + currentBrowser + "] Login result for user [" + username +" "+ password +"] : " + Result, true);
-        Reporter.log("[Thread ID : " + Thread.currentThread().getId() + "] " + Result, true);
+    @Test
+    public void invalidPasswordTest() throws Throwable {
+        PropertyFileUtility pp = new PropertyFileUtility();
+        String URL = pp.toGetDataFromPropertiesFile("url");
+        String vEMAIL = pp.toGetDataFromPropertiesFile("validEmail");
+        String INVPASSWORD1 = pp.toGetDataFromPropertiesFile("invalidPassword1");
+        WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        wb.implicitlyWait(driver);
+        driver.get(URL);
 
-        if (Result.contains("Invalid Email") || Result.contains("Invalid Credentials")) {
-            Reporter.log("[" + currentBrowser + "] Login failed → Closing browser", true);
-            driver.quit();
-        } else if (Result.contains("Login Successful")) {
-            Reporter.log("[" + currentBrowser + "] Login successful → Logging out and closing browser", true);
-            lp.LogoutFromApp();
-            driver.quit();
-        }
+        LoginPage lp = new LoginPage(driver);
+        lp.loginToApp(vEMAIL, INVPASSWORD1);
+        System.out.println("❌ Login Failed: Valid Email & Invalid Password");
+    }
+
+    @Test
+    public void invalidEmailTest() throws Throwable {
+        PropertyFileUtility pp = new PropertyFileUtility();
+        String URL = pp.toGetDataFromPropertiesFile("url");
+        String INVEMAIL1 = pp.toGetDataFromPropertiesFile("invalidEmail1");
+        String vPASSWORD = pp.toGetDataFromPropertiesFile("validPassword");
+
+        WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        wb.implicitlyWait(driver);
+        driver.get(URL);
+
+        
+        LoginPage lp = new LoginPage(driver);
+        lp.loginToApp(INVEMAIL1, vPASSWORD);
+        System.out.println("❌ Login Failed: Invalid Email & Valid Password");
+    }
+
+    @Test
+    public void invalidEmailAndPasswordTest() throws Throwable {
+        PropertyFileUtility pp = new PropertyFileUtility();
+        String URL = pp.toGetDataFromPropertiesFile("url");
+        String INVEMAIL1 = pp.toGetDataFromPropertiesFile("invalidEmail1");
+        String INVPASSWORD1 = pp.toGetDataFromPropertiesFile("invalidPassword1");
+        WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        wb.implicitlyWait(driver);
+        driver.get(URL);
+
+        LoginPage lp = new LoginPage(driver);
+        lp.loginToApp(INVEMAIL1, INVPASSWORD1);
+        System.out.println("❌ Login Failed: Invalid Email & Invalid Password");
     }
 }

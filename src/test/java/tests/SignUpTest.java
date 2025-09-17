@@ -1,36 +1,40 @@
 package tests;
 
-import org.testng.Reporter;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 
 import POM.SignUpPage;
 import base.BaseTest;
+import fileUtility.PropertyFileUtility;
 import javaUtility.JavaUtilityProgram;
+import webDriverUtility.WebDriverUtilityProgram;
 
+public class SignUpTest extends BaseTest {
 
+    // ✅ Valid Signup Test
+    @Test
+    public void validSignUpTest() throws Throwable {
+        PropertyFileUtility pp = new PropertyFileUtility();
+        String URL = pp.toGetDataFromPropertiesFile("url");
 
+        // Random test data
+        JavaUtilityProgram jp = new JavaUtilityProgram();
+        String RANDOMENAME = jp.generateRandomName();
+        String UNIQUEEMAIL = jp.generateUniqueEmail();
+        String PHONENUMBER = jp.generateUniquePhoneNumber();
+        JavaUtilityProgram.generateRandomPassword RP = new JavaUtilityProgram.generateRandomPassword();
+        String RPASSWORD = RP.getRandomPass(9);
+        WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        wb.implicitlyWait(driver);
+        driver.get(URL);
 
-public class SignUpTest extends BaseTest{
-	
-		@Test
-		public void signUpInAc() throws Throwable{
-			
-			JavaUtilityProgram jp = new JavaUtilityProgram();
-			
-			String email = jp.generateUniqueEmail();
-			String phoneNum = jp.generateUniquePhoneNumber();
-			String randomName = jp.generateRandomName();
-			JavaUtilityProgram.generateRandomPassword gp = new JavaUtilityProgram.generateRandomPassword();
-			String ranPass = gp.getRandomPass(8);
-			String TimeStemp = jp.getCurrentDateAndTime();
-			 
-			
-			Reporter.log("Attempting Login On: " + TimeStemp);
-			Reporter.log("Attempting SignUp Using: "+ email + ":" +ranPass + ":" + phoneNum,true);
-			Reporter.log("Running Test On Current Browser:" + currentBrowser,true);
-		
-			SignUpPage sp = new SignUpPage(driver);
-			sp.signUp(randomName, email, phoneNum, ranPass);
-		}
-	
+        SignUpPage sp = new SignUpPage(driver);
+        sp.signUp(RANDOMENAME, UNIQUEEMAIL, PHONENUMBER, RPASSWORD);
+
+        System.out.println("✅ Valid Signup Successful on with email: " + UNIQUEEMAIL);
+        
+        Thread.sleep(5000);
+        driver.quit();
+    }
 }
