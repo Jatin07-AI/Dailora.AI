@@ -1,24 +1,17 @@
-name: Run Selenium Tests
-
 on:
   push:
     branches:
       - dev
   schedule:
-<<<<<<< HEAD
-    # Roz 3 PM IST = 9:30 UTC
-    - cron: "30 9 * * *"
-=======
-    # Roz raat 12:00 baje IST (18:30 UTC = 00:00 IST)
-    - cron: "45 9 * * *"
->>>>>>> refs/remotes/origin/dev
+    # Roz 4:10 PM IST = 10:40 UTC
+    - cron: "40 10 * * *"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [chrome, firefox]   # Edge ko Ubuntu pe avoid kiya for now
+        browser: [chrome, firefox]
 
     steps:
       - name: Checkout Code
