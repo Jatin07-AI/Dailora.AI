@@ -5,8 +5,13 @@ on:
     branches:
       - dev
   schedule:
+<<<<<<< HEAD
     # Roz 3 PM IST = 9:30 UTC
     - cron: "30 9 * * *"
+=======
+    # Roz raat 12:00 baje IST (18:30 UTC = 00:00 IST)
+    - cron: "45 9 * * *"
+>>>>>>> refs/remotes/origin/dev
 
 jobs:
   test:
