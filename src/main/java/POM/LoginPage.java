@@ -92,6 +92,7 @@ public class LoginPage {
 	   
 		LOGOUTDROPDOWN.click();
 		
+		wb.waitForInvisibilityOfElementByXPath(driver, "//div[contains(@class,'fixed') and contains(@class,'z-[200]')]", 20);
 		// Scroll to dropdown first
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", LOGOUTBTN);
 		 wb.elementTobeClickable(driver, LOGOUTBTN);

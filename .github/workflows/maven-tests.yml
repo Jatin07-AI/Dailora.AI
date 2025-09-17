@@ -5,15 +5,15 @@ on:
     branches:
       - dev
   schedule:
-    # Roz raat 12:00 baje IST (18:30 UTC = 00:00 IST)
-    - cron: "30 18 * * *"
+    # Roz 3 PM IST = 9:30 UTC
+    - cron: "30 9 * * *"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [chrome, firefox]   # 👉 Edge comment kar diya for now (Ubuntu runner pe extra setup chahiye)
+        browser: [chrome, firefox]   # Edge ko Ubuntu pe avoid kiya for now
 
     steps:
       - name: Checkout Code
@@ -40,4 +40,5 @@ jobs:
 
       - name: Run Tests on ${{ matrix.browser }}
         run: |
+          echo "Running tests on browser: ${{ matrix.browser }}"
           mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
