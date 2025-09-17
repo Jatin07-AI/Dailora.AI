@@ -87,7 +87,7 @@ public class SignUpPage {
 		wb.visibilityOfElement(driver, SUBMITBTN);
 		Thread.sleep(5000);
 		SUBMITBTN.click();
-		}
+	}
 	
 	
 }
