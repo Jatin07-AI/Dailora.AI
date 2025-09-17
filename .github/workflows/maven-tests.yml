@@ -6,7 +6,7 @@ on:
       - dev
   schedule:
     # Roz raat 12:00 baje IST (18:30 UTC = 00:00 IST)
-    - cron: "30 18 * * *"
+    - cron: "45 9 * * *"
 
 jobs:
   test:
