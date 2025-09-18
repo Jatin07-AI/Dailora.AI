@@ -63,7 +63,7 @@ public class BaseTest {
 
             if (isHeadless) {
                 // ✅ Headless for CI / GitHub
-            	    WebDriverManager.edgedriver().setup(); 
+            	   
                 options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
                 WebDriverManager.edgedriver().setup(); // Auto download
                 localDriver = new EdgeDriver(options);
