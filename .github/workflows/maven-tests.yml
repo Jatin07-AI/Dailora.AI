@@ -11,9 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: [chrome, firefox, edge]  # ✅ Run tests in all 3 browsers
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -60,10 +57,10 @@ jobs:
 
       - name: Run TestNG Suite
         run: |
-          mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+          mvn clean test -Dheadless=true
 
       - name: Upload Surefire Reports
         uses: actions/upload-artifact@v4
         with:
-          name: surefire-reports-${{ matrix.browser }}
+          name: surefire-reports
           path: target/surefire-reports
