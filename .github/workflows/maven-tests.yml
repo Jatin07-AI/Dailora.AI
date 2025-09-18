@@ -3,8 +3,8 @@ on:
     branches:
       - dev
   schedule:
-    # Roz dopahar 12 baje IST = 06:30 UTC
-    - cron: "0 7 * * *"
+    # Roz 4 baje PM IST = 10:30 UTC
+    - cron: "30 10 * * *"
 
 jobs:
   test:
@@ -35,9 +35,18 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
+      - name: Install Microsoft Edge
+        run: |
+          curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+          sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+          sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
+          sudo rm microsoft.gpg
+          sudo apt update
+          sudo apt install -y microsoft-edge-stable
+
       - name: Run TestNG Suite
         run: |
-          mvn clean test -DsuiteXmlFile=testng.xml
+          mvn clean test -DsuiteXmlFile=testng.xml -Dbrowser=edge -Dheadless=true
 
       - name: Upload Surefire Reports
         uses: actions/upload-artifact@v4
