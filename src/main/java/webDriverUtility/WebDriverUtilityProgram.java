@@ -30,12 +30,12 @@ public class WebDriverUtilityProgram {
 	}
 	
 	public void visibilityOfElement(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 	public void elementTobeClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}

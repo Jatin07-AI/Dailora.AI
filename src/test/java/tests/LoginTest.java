@@ -22,7 +22,6 @@ public class LoginTest extends BaseTest {
         LoginPage lp = new LoginPage(driver);
         lp.loginToApp(vEMAIL, vPASSWORD);
         System.out.println(" Login Successful: Valid Email & Valid Password");
-        Thread.sleep(20000);
         lp.logoutTOApp();
         System.out.println("Logout From App");
     }

@@ -3,8 +3,8 @@ on:
     branches:
       - dev
   schedule:
-    # Roz 4:10 PM IST = 10:40 UTC
-    - cron: "40 10 * * *"
+    # Roz dopahar 12 baje IST = 06:30 UTC
+    - cron: "30 6 * * *"
 
 jobs:
   test:

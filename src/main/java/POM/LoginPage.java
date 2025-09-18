@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import webDriverUtility.WebDriverUtilityProgram;
 
 public class LoginPage {
@@ -26,10 +25,10 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement SUBMIT;
 	
-	@FindBy(xpath = "//div[@class='relative']")
+	@FindBy(xpath = "//button[@id='radix-:rv:']")
 	private WebElement LOGOUTDROPDOWN;
 	
-	@FindBy(xpath = "//div[text()='Log out']")
+	@FindBy(xpath = "//div[@role='menuitem' and contains(., 'Log out')]")
 	private WebElement LOGOUTBTN;
 	
 	@FindBy(id = "zs_fl_close")
@@ -41,6 +40,9 @@ public class LoginPage {
 	@FindBy(xpath = "//p[contains(text(),'Email must be')]")
 	private WebElement WRONGEMAIL;
 
+	@FindBy(xpath = "//span[text()='Agents']")
+	private WebElement AGENTS;
+	
 	public WebElement getEMAIL() {
 		return EMAIL;
 	}
@@ -79,23 +81,15 @@ public class LoginPage {
 		SUBMIT.click();
 	}
 
-	public void logoutTOApp() throws Throwable{
-		 wb.waitForInvisibilityOfElementByXPath(driver, "//div[contains(@class,'fixed') and contains(@class,'z-[200]')]", 20);
-
-		 // Scroll to dropdown first
-		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", LOGOUTDROPDOWN);
-
-
-	    // Then wait for logout button to be clickable
-	    wb.elementTobeClickable(driver, LOGOUTDROPDOWN);
-
-	   
+	public void logoutTOApp() throws Throwable {
+		wb.visibilityOfElement(driver, AGENTS);
+		AGENTS.click();
+		System.out.println("Agent Category Clicked");
+		 Thread.sleep(2000);
 		LOGOUTDROPDOWN.click();
-		
-		wb.waitForInvisibilityOfElementByXPath(driver, "//div[contains(@class,'fixed') and contains(@class,'z-[200]')]", 20);
-		// Scroll to dropdown first
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", LOGOUTBTN);
-		 wb.elementTobeClickable(driver, LOGOUTBTN);
+		System.out.println("Logout Dropdown clicked");
+		wb.visibilityOfElement(driver, LOGOUTBTN);
 		LOGOUTBTN.click();
-	}
+		System.out.println("Logout button clicked");
+	   	}
 }

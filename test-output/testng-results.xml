@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-17T15:30:22 IST" name="AutomationSuite" finished-at="2025-09-17T15:31:46 IST" duration-ms="83830">
+  <suite started-at="2025-09-18T10:42:36 IST" name="AutomationSuite" finished-at="2025-09-18T10:43:36 IST" duration-ms="60390">
     <groups>
     </groups>
-    <test started-at="2025-09-17T15:30:22 IST" name="ChromeTests" finished-at="2025-09-17T15:31:35 IST" duration-ms="72596">
+    <test started-at="2025-09-18T10:42:36 IST" name="ChromeTests" finished-at="2025-09-18T10:43:22 IST" duration-ms="46238">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:22 IST" name="setup" finished-at="2025-09-17T15:30:25 IST" duration-ms="3129" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:36 IST" name="setup" finished-at="2025-09-18T10:42:40 IST" duration-ms="4016" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidEmailAndPasswordTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:25 IST" name="invalidEmailAndPasswordTest" finished-at="2025-09-17T15:30:27 IST" duration-ms="1267" status="PASS">
+        <test-method signature="invalidEmailAndPasswordTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:40 IST" name="invalidEmailAndPasswordTest" finished-at="2025-09-18T10:42:42 IST" duration-ms="1593" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidEmailAndPasswordTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:27 IST" name="tearDown" finished-at="2025-09-17T15:30:27 IST" duration-ms="171" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:42 IST" name="tearDown" finished-at="2025-09-18T10:42:42 IST" duration-ms="172" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:27 IST" name="setup" finished-at="2025-09-17T15:30:28 IST" duration-ms="1735" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:42 IST" name="setup" finished-at="2025-09-18T10:42:44 IST" duration-ms="2452" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,15 +37,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidEmailTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:28 IST" name="invalidEmailTest" finished-at="2025-09-17T15:30:30 IST" duration-ms="1341" status="PASS">
+        <test-method signature="invalidEmailTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:44 IST" name="invalidEmailTest" finished-at="2025-09-18T10:42:46 IST" duration-ms="1526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidEmailTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:30 IST" name="tearDown" finished-at="2025-09-17T15:30:30 IST" duration-ms="107" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:46 IST" name="tearDown" finished-at="2025-09-18T10:42:46 IST" duration-ms="112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:30 IST" name="setup" finished-at="2025-09-17T15:30:31 IST" duration-ms="767" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:46 IST" name="setup" finished-at="2025-09-18T10:42:48 IST" duration-ms="2260" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -56,15 +56,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidPasswordTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:31 IST" name="invalidPasswordTest" finished-at="2025-09-17T15:30:33 IST" duration-ms="2378" status="PASS">
+        <test-method signature="invalidPasswordTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:48 IST" name="invalidPasswordTest" finished-at="2025-09-18T10:42:50 IST" duration-ms="1653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidPasswordTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:33 IST" name="tearDown" finished-at="2025-09-17T15:30:33 IST" duration-ms="102" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:50 IST" name="tearDown" finished-at="2025-09-18T10:42:50 IST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:33 IST" name="setup" finished-at="2025-09-17T15:30:35 IST" duration-ms="1765" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:50 IST" name="setup" finished-at="2025-09-18T10:42:52 IST" duration-ms="2211" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,17 +75,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validLoginTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:30:35 IST" name="validLoginTest" finished-at="2025-09-17T15:31:16 IST" duration-ms="41536" status="PASS">
+        <test-method signature="validLoginTest()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:42:52 IST" name="validLoginTest" finished-at="2025-09-18T10:43:03 IST" duration-ms="11085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-17T15:31:16 IST" name="tearDown" finished-at="2025-09-17T15:31:17 IST" duration-ms="148" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@dd05255]" started-at="2025-09-18T10:43:03 IST" name="tearDown" finished-at="2025-09-18T10:43:04 IST" duration-ms="835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.SignUpTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-17T15:31:17 IST" name="setup" finished-at="2025-09-17T15:31:19 IST" duration-ms="2184" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-18T10:43:04 IST" name="setup" finished-at="2025-09-18T10:43:06 IST" duration-ms="2267" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -96,19 +96,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validSignUpTest()[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-17T15:31:19 IST" name="validSignUpTest" finished-at="2025-09-17T15:31:35 IST" duration-ms="15905" status="PASS">
+        <test-method signature="validSignUpTest()[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-18T10:43:06 IST" name="validSignUpTest" finished-at="2025-09-18T10:43:22 IST" duration-ms="15859" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validSignUpTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-17T15:31:35 IST" name="tearDown" finished-at="2025-09-17T15:31:35 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@1ff4931d]" started-at="2025-09-18T10:43:22 IST" name="tearDown" finished-at="2025-09-18T10:43:22 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.SignUpTest -->
     </test> <!-- ChromeTests -->
-    <test started-at="2025-09-17T15:30:22 IST" name="FirefoxTests" finished-at="2025-09-17T15:31:46 IST" duration-ms="83830">
+    <test started-at="2025-09-18T10:42:36 IST" name="FirefoxTests" finished-at="2025-09-18T10:43:36 IST" duration-ms="60390">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:22 IST" name="setup" finished-at="2025-09-17T15:30:27 IST" duration-ms="4970" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:36 IST" name="setup" finished-at="2025-09-18T10:42:42 IST" duration-ms="6042" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -119,15 +119,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidEmailAndPasswordTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:27 IST" name="invalidEmailAndPasswordTest" finished-at="2025-09-17T15:30:29 IST" duration-ms="1605" status="PASS">
+        <test-method signature="invalidEmailAndPasswordTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:42 IST" name="invalidEmailAndPasswordTest" finished-at="2025-09-18T10:42:44 IST" duration-ms="1842" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidEmailAndPasswordTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:29 IST" name="tearDown" finished-at="2025-09-17T15:30:29 IST" duration-ms="748" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:44 IST" name="tearDown" finished-at="2025-09-18T10:42:45 IST" duration-ms="960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:29 IST" name="setup" finished-at="2025-09-17T15:30:33 IST" duration-ms="3737" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:45 IST" name="setup" finished-at="2025-09-18T10:42:50 IST" duration-ms="5441" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -138,15 +138,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidEmailTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:33 IST" name="invalidEmailTest" finished-at="2025-09-17T15:30:35 IST" duration-ms="1567" status="PASS">
+        <test-method signature="invalidEmailTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:50 IST" name="invalidEmailTest" finished-at="2025-09-18T10:42:52 IST" duration-ms="1845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidEmailTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:35 IST" name="tearDown" finished-at="2025-09-17T15:30:36 IST" duration-ms="799" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:52 IST" name="tearDown" finished-at="2025-09-18T10:42:53 IST" duration-ms="887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:36 IST" name="setup" finished-at="2025-09-17T15:30:39 IST" duration-ms="3290" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:53 IST" name="setup" finished-at="2025-09-18T10:42:57 IST" duration-ms="4525" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -157,15 +157,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidPasswordTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:39 IST" name="invalidPasswordTest" finished-at="2025-09-17T15:30:40 IST" duration-ms="1425" status="PASS">
+        <test-method signature="invalidPasswordTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:57 IST" name="invalidPasswordTest" finished-at="2025-09-18T10:42:59 IST" duration-ms="1616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidPasswordTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:40 IST" name="tearDown" finished-at="2025-09-17T15:30:41 IST" duration-ms="740" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:42:59 IST" name="tearDown" finished-at="2025-09-18T10:43:00 IST" duration-ms="757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:41 IST" name="setup" finished-at="2025-09-17T15:30:45 IST" duration-ms="4091" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:43:00 IST" name="setup" finished-at="2025-09-18T10:43:04 IST" duration-ms="4307" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -176,17 +176,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validLoginTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:30:45 IST" name="validLoginTest" finished-at="2025-09-17T15:31:27 IST" duration-ms="41847" status="PASS">
+        <test-method signature="validLoginTest()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:43:04 IST" name="validLoginTest" finished-at="2025-09-18T10:43:15 IST" duration-ms="11186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-17T15:31:27 IST" name="tearDown" finished-at="2025-09-17T15:31:28 IST" duration-ms="663" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@192c3f1e]" started-at="2025-09-18T10:43:15 IST" name="tearDown" finished-at="2025-09-18T10:43:16 IST" duration-ms="760" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.SignUpTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-17T15:31:28 IST" name="setup" finished-at="2025-09-17T15:31:32 IST" duration-ms="4289" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-18T10:43:16 IST" name="setup" finished-at="2025-09-18T10:43:21 IST" duration-ms="5365" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -197,11 +197,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="validSignUpTest()[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-17T15:31:32 IST" name="validSignUpTest" finished-at="2025-09-17T15:31:46 IST" duration-ms="14009" status="PASS">
+        <test-method signature="validSignUpTest()[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-18T10:43:21 IST" name="validSignUpTest" finished-at="2025-09-18T10:43:36 IST" duration-ms="14792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validSignUpTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-17T15:31:46 IST" name="tearDown" finished-at="2025-09-17T15:31:46 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@26b3fd41]" started-at="2025-09-18T10:43:36 IST" name="tearDown" finished-at="2025-09-18T10:43:36 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
