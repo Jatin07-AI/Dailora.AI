@@ -62,16 +62,16 @@ public class BaseTest {
             EdgeOptions options = new EdgeOptions();
 
             if (isHeadless) {
-                // ✅ Headless for CI / GitHub
-            	   
+                // ✅ Headless for CI / GitHub Actions
                 options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
-                WebDriverManager.edgedriver().setup(); // Auto download
+                System.setProperty("webdriver.edge.driver", "/usr/bin/msedgedriver"); // pre-installed path
                 localDriver = new EdgeDriver(options);
             } else {
                 // ✅ Local machine → manual exe
                 System.setProperty("webdriver.edge.driver", "C:\\Drivers\\edgedriver_win64\\msedgedriver.exe");
                 localDriver = new EdgeDriver(options);
             }
+
 
         } else {
             throw new RuntimeException("Invalid Browser: " + BROWSER);
