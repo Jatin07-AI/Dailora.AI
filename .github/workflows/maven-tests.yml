@@ -6,7 +6,7 @@ on:
       - dev
   schedule:
     # Daily 4:00 PM IST = 10:30 UTC
-    - cron: "30 10 * * *"
+    - cron: "30 18 * * *"
 
 jobs:
   test:
