@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -25,6 +26,7 @@ public class SignUpTest extends BaseTest {
         String PHONENUMBER = jp.generateUniquePhoneNumber();
         JavaUtilityProgram.generateRandomPassword RP = new JavaUtilityProgram.generateRandomPassword();
         String RPASSWORD = RP.getRandomPass(9);
+        WebDriver driver = BaseTest.getDriver();
         WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
         wb.implicitlyWait(driver);
         driver.get(URL);

@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import POM.LoginPage;
 import base.BaseTest;
@@ -15,6 +16,7 @@ public class LoginTest extends BaseTest {
         String URL = pp.toGetDataFromPropertiesFile("url");
         String vEMAIL = pp.toGetDataFromPropertiesFile("validEmail");
         String vPASSWORD = pp.toGetDataFromPropertiesFile("validPassword");
+        WebDriver driver = BaseTest.getDriver();
         WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
         wb.implicitlyWait(driver);
         driver.get(URL);
@@ -32,6 +34,7 @@ public class LoginTest extends BaseTest {
         String URL = pp.toGetDataFromPropertiesFile("url");
         String vEMAIL = pp.toGetDataFromPropertiesFile("validEmail");
         String INVPASSWORD1 = pp.toGetDataFromPropertiesFile("invalidPassword1");
+        WebDriver driver = BaseTest.getDriver();
         WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
         wb.implicitlyWait(driver);
         driver.get(URL);
@@ -49,6 +52,7 @@ public class LoginTest extends BaseTest {
         String vPASSWORD = pp.toGetDataFromPropertiesFile("validPassword");
 
         WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        WebDriver driver = BaseTest.getDriver();
         wb.implicitlyWait(driver);
         driver.get(URL);
 
@@ -65,6 +69,7 @@ public class LoginTest extends BaseTest {
         String INVEMAIL1 = pp.toGetDataFromPropertiesFile("invalidEmail1");
         String INVPASSWORD1 = pp.toGetDataFromPropertiesFile("invalidPassword1");
         WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
+        WebDriver driver = BaseTest.getDriver();
         wb.implicitlyWait(driver);
         driver.get(URL);
 

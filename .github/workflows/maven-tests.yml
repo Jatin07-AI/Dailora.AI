@@ -3,15 +3,11 @@ on:
     branches:
       - dev
   schedule:
-    # Roz dopahar 12 baje IST = 06:30 UTC
     - cron: "30 6 * * *"
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: [chrome, firefox]
 
     steps:
       - name: Checkout Code
@@ -31,12 +27,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install Browsers
+      - name: Install Google Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable firefox
+          sudo apt-get install -y wget unzip
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-      - name: Run Tests on ${{ matrix.browser }}
+      - name: Run TestNG Suite
         run: |
-          echo "Running tests on browser: ${{ matrix.browser }}"
-          mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+          mvn clean test -DsuiteXmlFile=testng.xml
