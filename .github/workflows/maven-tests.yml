@@ -39,7 +39,7 @@ jobs:
           # Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
-          # Firefox (pre-installed usually)
+          # Firefox
           sudo apt-get install -y firefox
           # Edge
           curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -51,7 +51,7 @@ jobs:
 
       - name: Run TestNG Suite
         run: |
-          mvn clean test -DsuiteXmlFile=testng.xml -Dbrowser=${{ matrix.browser }} -Dheadless=true
+          mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
 
       - name: Upload Surefire Reports
         uses: actions/upload-artifact@v4

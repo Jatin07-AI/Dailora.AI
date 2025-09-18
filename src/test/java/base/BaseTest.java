@@ -47,16 +47,18 @@ public class BaseTest {
             localDriver = new ChromeDriver(options);
 
         } 
-        // ✅ Firefox setup
         else if (BROWSER.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
             if (isHeadless) {
-                options.addArguments("-headless");
+                options.addArguments("--headless");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--window-size=1920,1080");
             }
             localDriver = new FirefoxDriver(options);
+        }
 
-        } 
         // ✅ Edge setup with dual-mode
         else if (BROWSER.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
