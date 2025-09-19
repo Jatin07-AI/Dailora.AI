@@ -10,7 +10,7 @@ import webDriverUtility.WebDriverUtilityProgram;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1)
     public void validLoginTest() throws Throwable {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
@@ -24,11 +24,12 @@ public class LoginTest extends BaseTest {
         LoginPage lp = new LoginPage(driver);
         lp.loginToApp(vEMAIL, vPASSWORD);
         System.out.println(" Login Successful: Valid Email & Valid Password");
+      
+             
         lp.logoutTOApp();
-        System.out.println("Logout From App");
     }
 
-    @Test
+    @Test(priority = 2)
     public void invalidPasswordTest() throws Throwable {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
@@ -44,7 +45,7 @@ public class LoginTest extends BaseTest {
         System.out.println("❌ Login Failed: Valid Email & Invalid Password");
     }
 
-    @Test
+    @Test(priority = 3)
     public void invalidEmailTest() throws Throwable {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
@@ -56,13 +57,12 @@ public class LoginTest extends BaseTest {
         wb.implicitlyWait(driver);
         driver.get(URL);
 
-        
         LoginPage lp = new LoginPage(driver);
         lp.loginToApp(INVEMAIL1, vPASSWORD);
         System.out.println("❌ Login Failed: Invalid Email & Valid Password");
     }
 
-    @Test
+    @Test(priority = 4)
     public void invalidEmailAndPasswordTest() throws Throwable {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");

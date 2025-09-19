@@ -14,12 +14,14 @@ import org.testng.annotations.Parameters;
 
 import fileUtility.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import javaUtility.JavaUtilityProgram;
 
 public class BaseTest {
 
     // ✅ ThreadLocal driver for parallel safe execution
     private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
-
+    protected String browserName;
+    
     // ✅ Getter for driver
     public static WebDriver getDriver() {
         return tlDriver.get();
@@ -32,8 +34,8 @@ public class BaseTest {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
 
-        WebDriver localDriver;
-
+        WebDriver driver;
+        browserName = BROWSER; // ✅ store browser name
         // ✅ Headless mode check (default false)
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
 
@@ -44,7 +46,7 @@ public class BaseTest {
             if (isHeadless) {
                 options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
             }
-            localDriver = new ChromeDriver(options);
+            driver = new ChromeDriver(options);
 
         } 
         else if (BROWSER.equalsIgnoreCase("firefox")) {
@@ -56,7 +58,7 @@ public class BaseTest {
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--window-size=1920,1080");
             }
-            localDriver = new FirefoxDriver(options);
+            driver = new FirefoxDriver(options);
         }
 
         // ✅ Edge setup with dual-mode
@@ -67,11 +69,11 @@ public class BaseTest {
                 // ✅ Headless for CI / GitHub Actions
                 options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
                 System.setProperty("webdriver.edge.driver", "/usr/bin/msedgedriver"); // pre-installed path
-                localDriver = new EdgeDriver(options);
+                driver = new EdgeDriver(options);
             } else {
                 // ✅ Local machine → manual exe
                 System.setProperty("webdriver.edge.driver", "C:\\Drivers\\edgedriver_win64\\msedgedriver.exe");
-                localDriver = new EdgeDriver(options);
+                driver = new EdgeDriver(options);
             }
 
 
@@ -80,11 +82,16 @@ public class BaseTest {
         }
 
         // ✅ Set ThreadLocal driver
-        tlDriver.set(localDriver);
+        tlDriver.set(driver);
 
         // ✅ Maximize window and open URL
         getDriver().manage().window().maximize();
         getDriver().get(URL);
+        
+     // ✅ print date + browser
+        JavaUtilityProgram jp = new JavaUtilityProgram();
+        System.out.println("🕒 Test Started At: " + jp.getCurrentDateAndTime() + " | Browser: " + browserName);
+    
     }
 
     @AfterMethod

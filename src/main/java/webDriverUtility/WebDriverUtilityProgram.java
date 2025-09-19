@@ -20,20 +20,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebDriverUtilityProgram {
 
 	public void implicitlyWait(WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	
+	public void waitForPageLoad(WebDriver driver, int timeoutInSeconds) {
+	    new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+	        .until(webDriver -> ((JavascriptExecutor) webDriver)
+	        .executeScript("return document.readyState").equals("complete"));
+	}
+
+	
 	// Wait for element located by a locator (CSS or XPath) to become invisible
-	public void waitForInvisibilityOfElementByXPath(WebDriver driver, String xpath, int timeoutInSeconds) {
+	public void waitForInvisibilityOfElement(WebDriver driver,WebElement element, int timeoutInSeconds) {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
+	    wait.until(ExpectedConditions.invisibilityOf(element));
 	}
 	
 	public void visibilityOfElement(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
+
 	public void elementTobeClickable(WebDriver driver,WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.elementToBeClickable(element));

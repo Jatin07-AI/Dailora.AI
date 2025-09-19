@@ -13,7 +13,7 @@ import webDriverUtility.WebDriverUtilityProgram;
 public class SignUpTest extends BaseTest {
 
     // ✅ Valid Signup Test
-    @Test
+    @Test(priority = 1)
     public void validSignUpTest() throws Throwable {
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
@@ -36,6 +36,5 @@ public class SignUpTest extends BaseTest {
         System.out.println("✅ Valid Signup Successful on with email: " + UNIQUEEMAIL);
         
         Thread.sleep(5000);
-        driver.quit();
     }
 }

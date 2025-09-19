@@ -62,23 +62,34 @@ public class JavaUtilityProgram {
 		return firstName + " " + lastName;
 	}
 	
-	public static class generateRandomPassword{ 
-		private final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		private final String LOWER = "abcdefghijklmnopqrstuvwxyz";
-		private final String DIGIT = "0123456789";
-		private final String SPECIALCH = "@#$%^&*!";
-		
-		public String getRandomPass(int length) {
-			String combined = UPPER+LOWER+DIGIT+SPECIALCH;
-			SecureRandom rn = new SecureRandom();
-			StringBuilder sb = new StringBuilder();
-			for(int i=0;i<length;i++) {
-				int index = rn.nextInt(combined.length());
-				sb.append(combined.charAt(index));
-				}
-				return sb.toString();
-			}
+	public static class generateRandomPassword { 
+	    private final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    private final String LOWER = "abcdefghijklmnopqrstuvwxyz";
+	    private final String DIGIT = "0123456789";
+
+	    public String getRandomPass(int length) {
+	        String combined = UPPER + LOWER + DIGIT; // $ ko yaha se hata diya
+	        SecureRandom rn = new SecureRandom();
+	        StringBuilder sb = new StringBuilder();
+
+	        // pehle (length-1) characters generate kar lete hai
+	        for (int i = 0; i < length - 1; i++) {
+	            int index = rn.nextInt(combined.length());
+	            sb.append(combined.charAt(index));
+	        }
+
+	        // ab $ ko ek random position pe insert kar do
+	        int pos = rn.nextInt(sb.length() + 1); // +1 matlab end me bhi daal sakte hai
+	        sb.insert(pos, '$');
+	        
+	     // ab numeric digit 2 ko ek random position pe insert kar do
+	        int num = rn.nextInt(sb.length() + 1); // +1 matlab end me bhi daal sakte hai
+	        sb.insert(num, '2');
+
+	        return sb.toString();
+	    }
 	}
+
 	
 }
 

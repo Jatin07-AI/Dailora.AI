@@ -74,17 +74,30 @@ public class LoginPage {
 		return WRONGEMAIL;
 	}
 	
-	public void loginToApp(String username,String password) {
+	public void loginToApp(String username,String password) throws Throwable{
 		EMAIL.sendKeys(username);
+		System.out.println("Emailed Entered");
 		PASSWORD.sendKeys(password);
+		System.out.println("Password Entered");
 		SUBMIT.click();
+		System.out.println("Submit button clicked");
+		Thread.sleep(20000);
 	}
 
 	public void logoutTOApp() throws Throwable {
-		wb.visibilityOfElement(driver, AGENTS);
-		AGENTS.click();
-		System.out.println("Agent Category Clicked");
-		 Thread.sleep(2000);
+		// verify by URL
+	    String expectedUrl = "https://dev.app.dialora.ai/dashboard";
+	    String actualUrl = driver.getCurrentUrl();
+
+	    if (actualUrl.equals(expectedUrl)) {
+	        System.out.println("✅ User successfully reached Dashboard page" + actualUrl);
+	    } else {
+	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + actualUrl);
+	    }
+		
+		Thread.sleep(10000);
+		wb.visibilityOfElement(driver, LOGOUTDROPDOWN);
+		Thread.sleep(5000);
 		LOGOUTDROPDOWN.click();
 		System.out.println("Logout Dropdown clicked");
 		wb.visibilityOfElement(driver, LOGOUTBTN);
