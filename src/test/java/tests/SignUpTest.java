@@ -76,6 +76,7 @@ public class SignUpTest extends BaseTest {
             Reporter.log("❌ Login failed or wrong page loaded. Actual: " + paymentActualUrl, true);
         }
 
+        wb.visibilityOfElement(driver, sp.getEnterCardNum());
         sp.getEnterCardNum().sendKeys("4242424242424242");
         sp.getCARDEXP().sendKeys("1230");
         sp.getCARDCVC().sendKeys("123");
