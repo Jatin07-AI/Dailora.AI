@@ -45,6 +45,14 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             if (isHeadless) {
                 options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
+                options.addArguments("--disable-popup-blocking");
+                options.addArguments("--disable-notifications");
+                options.addArguments("--disable-infobars");
+                options.addArguments("--disable-extensions");
+                options.addArguments("--disable-popup-blocking");
+                options.addArguments("--disable-notifications");
+                options.addArguments("--disable-infobars");
+                options.addArguments("--disable-extensions");
             }
             driver = new ChromeDriver(options);
 

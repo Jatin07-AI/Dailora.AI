@@ -1,7 +1,9 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import POM.LoginPage;
 import base.BaseTest;
 import fileUtility.PropertyFileUtility;
@@ -22,11 +24,22 @@ public class LoginTest extends BaseTest {
         driver.get(URL);
 
         LoginPage lp = new LoginPage(driver);
-        lp.loginToApp(vEMAIL, vPASSWORD);
-        System.out.println(" Login Successful: Valid Email & Valid Password");
-      
-             
-        lp.logoutTOApp();
+        lp.getEMAIL().sendKeys(vEMAIL);
+        lp.getPASSWORD().sendKeys(vPASSWORD);
+        lp.getSUBMIT().click();
+        Thread.sleep(10000);
+        Reporter.log(" Login Successful: Valid Email & Valid Password",true);
+        
+        Thread.sleep(10000);
+        wb.visibilityOfElement(driver, lp.getAGENTS());
+        lp.getAGENTS().click();
+	    wb.visibilityOfElement(driver, lp.getLOGOUTDROPDOWN());
+	    lp.getLOGOUTDROPDOWN().click();
+	    Thread.sleep(2000);
+	    wb.visibilityOfElement(driver, lp.getLOGOUTBTN());
+	    
+	    lp.getLOGOUTBTN().click();
+	    Reporter.log("Logout Successfully",true);
     }
 
     @Test(priority = 2)
@@ -40,9 +53,12 @@ public class LoginTest extends BaseTest {
         wb.implicitlyWait(driver);
         driver.get(URL);
 
+        wb.implicitlyWait(driver);
         LoginPage lp = new LoginPage(driver);
-        lp.loginToApp(vEMAIL, INVPASSWORD1);
-        System.out.println("❌ Login Failed: Valid Email & Invalid Password");
+        lp.getEMAIL().sendKeys(vEMAIL);
+        lp.getPASSWORD().sendKeys(INVPASSWORD1);
+        lp.getSUBMIT().click();
+        Reporter.log("❌ Login Failed: Valid Email & Invalid Password",true);
     }
 
     @Test(priority = 3)
@@ -57,9 +73,12 @@ public class LoginTest extends BaseTest {
         wb.implicitlyWait(driver);
         driver.get(URL);
 
+        wb.implicitlyWait(driver);
         LoginPage lp = new LoginPage(driver);
-        lp.loginToApp(INVEMAIL1, vPASSWORD);
-        System.out.println("❌ Login Failed: Invalid Email & Valid Password");
+        lp.getEMAIL().sendKeys(INVEMAIL1);
+        lp.getPASSWORD().sendKeys(vPASSWORD);
+        lp.getSUBMIT().click();
+        Reporter.log("❌ Login Failed: Invalid Email & Valid Password",true);
     }
 
     @Test(priority = 4)
@@ -73,8 +92,11 @@ public class LoginTest extends BaseTest {
         wb.implicitlyWait(driver);
         driver.get(URL);
 
+        wb.implicitlyWait(driver);
         LoginPage lp = new LoginPage(driver);
-        lp.loginToApp(INVEMAIL1, INVPASSWORD1);
-        System.out.println("❌ Login Failed: Invalid Email & Invalid Password");
+        lp.getEMAIL().sendKeys(INVEMAIL1);
+        lp.getPASSWORD().sendKeys(INVPASSWORD1);
+        lp.getSUBMIT().click();
+        Reporter.log("❌ Login Failed: Invalid Email & Invalid Password",true);
     }
 }

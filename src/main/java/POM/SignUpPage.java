@@ -115,99 +115,136 @@ public class SignUpPage {
 	
 	@FindBy (xpath = "//span[text()=\"Processing...\"]")
 	private WebElement PROCESSINGBTN;
-	
-	public void signUp(String randomName,String email, String phoneNum,String ranPass) throws Throwable{
-		
-		SIGNUPLINK.click();
-		AcceptAllBTN.click();
-		NAME.sendKeys(randomName);
-		EMAIL.sendKeys(email);
-		wb.select(COUNTRYCODE,"IN");
-		PhoneNum.sendKeys(phoneNum);
-		PASSWORD.sendKeys(ranPass);
-		wb.mouseHoverOnWebElement(driver, EYEICON1);
-		wb.mouseClickOnWebElement(driver, EYEICON1);
-		CNFPASSMSG.sendKeys(ranPass);
-		wb.mouseHoverOnWebElement(driver, EYEICON2);
-		wb.mouseClickOnWebElement(driver, EYEICON2);
-		wb.visibilityOfElement(driver, SUBMITBTN);
-		Thread.sleep(5000);
-		SUBMITBTN.click();
-		
-		Thread.sleep(20000);
-		
-		String expectedUrl = "https://dev.dialora.ai/signup/choose-plan?email=";
-	    String actualUrl = driver.getCurrentUrl();
 
-	    if (actualUrl.contains(expectedUrl)) {
-	        System.out.println("✅ User successfully reached Purchase Plan page: " + actualUrl);
-	    } else {
-	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + actualUrl);
-	    }
-		
-		SUBSCRIPTIONBTN.click();
-		
-		Thread.sleep(20000);
-		
-		String paymentExpectedURL = "https://checkout.stripe.com/";
-	    String paymentActualUrl = driver.getCurrentUrl();
-
-	    if (paymentActualUrl.contains(paymentExpectedURL)) {
-	        System.out.println("✅ User successfully reached at Payment Page: " + paymentActualUrl);
-	    } else {
-	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + actualUrl);
-	    }
-		
-	    EnterCardNum.sendKeys("4242424242424242");
-	    CARDEXP.sendKeys("1230");
-	    CARDCVC.sendKeys("123");
-	    wb.select(SELCOUNTRY, "IN");
-	    
-	    BILLINGNAME.sendKeys("Codiste");
-	    ADDRESS.sendKeys("Sarkhej - Gandhinagar Highway");
-	    Actions act = new Actions(driver);
-	    ADDRESS.sendKeys(Keys.ENTER);
-	    ADDRESS2.sendKeys("805-807");
-	    PINCODE.sendKeys("382470");
-	    CITY.sendKeys("Ahmedabad");
-	    	wb.select(STATE, "GJ");
-	    	Thread.sleep(2000);
-		wb.mouseClickOnWebElement(driver, StartTrialBTN);
-		wb.waitForInvisibilityOfElement(driver, PROCESSINGBTN, 50);
-		Thread.sleep(10000);
-	   
-
-	    
-	    
-	    String PaymentScuucessfulExpURL = "https://dev.dialora.ai/signup/success?session_id";
-	    String PaymentScuucessfulActualURL = driver.getCurrentUrl();
-
-	    if (PaymentScuucessfulActualURL.contains(PaymentScuucessfulExpURL)) {
-	        System.out.println("✅ User Get Payment Successful Page: " + PaymentScuucessfulActualURL);
-	    } else {
-	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + PaymentScuucessfulActualURL);
-	    }
-	    
-	    Thread.sleep(15000);
-	 
-	    String createdUSER = LOGINEMAIL.getAttribute("value");
-	    if(createdUSER.equals(email)){
-	        System.out.println("✅ Email auto-populated correctly: " + createdUSER);
-	    } else {
-	        System.out.println("❌ Email mismatch! Expected: " + email + " | Found: " + createdUSER);
-	    }
-	    
-	    String LOGINExPUrl = "https://dev.app.dialora.ai/login?";
-	    String LOGINActualUrl = driver.getCurrentUrl();
-
-	    if (LOGINActualUrl.contains(LOGINExPUrl)) {
-	        System.out.println("✅ User successfully reached at Payment Page: " + LOGINActualUrl);
-	    } else {
-	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + LOGINActualUrl);
-	    }
-	   
-	   
+	public WebElement getAcceptAllBTN() {
+		return AcceptAllBTN;
 	}
+
+	public WebElement getSIGNUPLINK() {
+		return SIGNUPLINK;
+	}
+
+	public WebElement getNAME() {
+		return NAME;
+	}
+
+	public WebElement getInvaliNameMsg() {
+		return InvaliNameMsg;
+	}
+
+	public WebElement getEMAIL() {
+		return EMAIL;
+	}
+
+	public WebElement getInvalidEmailMsg() {
+		return InvalidEmailMsg;
+	}
+
+	public WebElement getCOUNTRYCODE() {
+		return COUNTRYCODE;
+	}
+
+	public WebElement getPhoneNum() {
+		return PhoneNum;
+	}
+
+	public WebElement getInvalidPhnNumMsg() {
+		return InvalidPhnNumMsg;
+	}
+
+	public WebElement getPASSWORD() {
+		return PASSWORD;
+	}
+
+	public WebElement getEYEICON1() {
+		return EYEICON1;
+	}
+
+	public WebElement getWRNGPASSMSG() {
+		return WRNGPASSMSG;
+	}
+
+	public WebElement getCNFPASSMSG() {
+		return CNFPASSMSG;
+	}
+
+	public WebElement getEYEICON2() {
+		return EYEICON2;
+	}
+
+	public WebElement getWRNGCNFPASSMSG() {
+		return WRNGCNFPASSMSG;
+	}
+
+	public WebElement getSUBMITBTN() {
+		return SUBMITBTN;
+	}
+
+	public WebElement getCLOSEBTN() {
+		return CLOSEBTN;
+	}
+
+	public WebElement getSUBSCRIPTIONBTN() {
+		return SUBSCRIPTIONBTN;
+	}
+
+	public WebElement getEnterCardNum() {
+		return EnterCardNum;
+	}
+
+	public WebElement getCARDEXP() {
+		return CARDEXP;
+	}
+
+	public WebElement getCARDCVC() {
+		return CARDCVC;
+	}
+
+	public WebElement getBILLINGNAME() {
+		return BILLINGNAME;
+	}
+
+	public WebElement getSELCOUNTRY() {
+		return SELCOUNTRY;
+	}
+
+	public WebElement getADDRESS() {
+		return ADDRESS;
+	}
+
+	public WebElement getADDRESS2() {
+		return ADDRESS2;
+	}
+
+	public WebElement getPINCODE() {
+		return PINCODE;
+	}
+
+	public WebElement getCITY() {
+		return CITY;
+	}
+
+	public WebElement getSTATE() {
+		return STATE;
+	}
+
+	public WebElement getPaymentSubmitBTN() {
+		return PaymentSubmitBTN;
+	}
+
+	public WebElement getStartTrialBTN() {
+		return StartTrialBTN;
+	}
+
+	public WebElement getLOGINEMAIL() {
+		return LOGINEMAIL;
+	}
+
+	public WebElement getPROCESSINGBTN() {
+		return PROCESSINGBTN;
+	}
+	
+	
 	
 	
 }

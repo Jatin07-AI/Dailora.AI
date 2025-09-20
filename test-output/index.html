@@ -318,22 +318,22 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;AutomationSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;ChromeTests&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;AutomationSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;ChromeTests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
       &lt;class name=&quot;tests.SignUpTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- ChromeTests --&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;FirefoxTests&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;FirefoxTests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
       &lt;class name=&quot;tests.SignUpTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- FirefoxTests --&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;EdgeTests&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;EdgeTests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
@@ -387,68 +387,68 @@ data.addRows(15);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validSignUpTest')
 data.setCell(0, 2, 'tests.SignUpTest')
-data.setCell(0, 3, 116788);
+data.setCell(0, 3, 84166);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'validSignUpTest')
 data.setCell(1, 2, 'tests.SignUpTest')
-data.setCell(1, 3, 115071);
+data.setCell(1, 3, 77487);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'validSignUpTest')
 data.setCell(2, 2, 'tests.SignUpTest')
-data.setCell(2, 3, 113072);
+data.setCell(2, 3, 70222);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'validLoginTest')
 data.setCell(3, 2, 'tests.LoginTest')
-data.setCell(3, 3, 27773);
+data.setCell(3, 3, 18902);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'validLoginTest')
 data.setCell(4, 2, 'tests.LoginTest')
-data.setCell(4, 3, 27345);
+data.setCell(4, 3, 18817);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'validLoginTest')
 data.setCell(5, 2, 'tests.LoginTest')
-data.setCell(5, 3, 26593);
+data.setCell(5, 3, 18724);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'invalidEmailAndPasswordTest')
+data.setCell(6, 1, 'invalidEmailTest')
 data.setCell(6, 2, 'tests.LoginTest')
-data.setCell(6, 3, 21680);
+data.setCell(6, 3, 1618);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'invalidEmailAndPasswordTest')
+data.setCell(7, 1, 'invalidPasswordTest')
 data.setCell(7, 2, 'tests.LoginTest')
-data.setCell(7, 3, 21625);
+data.setCell(7, 3, 1472);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'invalidPasswordTest')
+data.setCell(8, 1, 'invalidEmailAndPasswordTest')
 data.setCell(8, 2, 'tests.LoginTest')
-data.setCell(8, 3, 21488);
+data.setCell(8, 3, 1363);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'invalidPasswordTest')
+data.setCell(9, 1, 'invalidEmailTest')
 data.setCell(9, 2, 'tests.LoginTest')
-data.setCell(9, 3, 21381);
+data.setCell(9, 3, 1337);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'invalidEmailTest')
+data.setCell(10, 1, 'invalidPasswordTest')
 data.setCell(10, 2, 'tests.LoginTest')
-data.setCell(10, 3, 21376);
+data.setCell(10, 3, 1241);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'invalidEmailTest')
+data.setCell(11, 1, 'invalidEmailAndPasswordTest')
 data.setCell(11, 2, 'tests.LoginTest')
-data.setCell(11, 3, 21320);
+data.setCell(11, 3, 1206);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'invalidPasswordTest')
 data.setCell(12, 2, 'tests.LoginTest')
-data.setCell(12, 3, 21299);
+data.setCell(12, 3, 1191);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'invalidEmailAndPasswordTest')
+data.setCell(13, 1, 'invalidEmailTest')
 data.setCell(13, 2, 'tests.LoginTest')
-data.setCell(13, 3, 21278);
+data.setCell(13, 3, 1175);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'invalidEmailTest')
+data.setCell(14, 1, 'invalidEmailAndPasswordTest')
 data.setCell(14, 2, 'tests.LoginTest')
-data.setCell(14, 3, 21259);
+data.setCell(14, 3, 1138);
 window.suiteTableData['AutomationSuite']= { tableData: data, tableDiv: 'times-div-AutomationSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-AutomationSuite">
               </div> <!-- times-div-AutomationSuite -->
             </div> <!-- times-div -->
@@ -459,6 +459,111 @@ return data;
             <span class="header-content">Reporter output for AutomationSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Valid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailAndPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validLoginTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> Login Successful: Valid Email & Valid Password</span>
+                <span class="reporter-method-output">Logout Successfully</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validSignUpTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">✅ User successfully reached Purchase Plan page: https://dev.dialora.ai/signup/choose-plan?email=testuser1758363687580%40example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Payment Page: https://checkout.stripe.com/c/pay/cs_test_b1ZXNLhHhqsukc74ZRBuybYF9IPRkbUDRcdZM1NrF1Onxb6wxSRk2VcMJQ#fid2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2R1bE5gfCc%2FJ3VuWnFgdnFaMDRNYndmVEJGak5zXWpyT0A0XFRuYnNCS2Zsb1JOcWNPb3FDZGxXXW9NQT1HfFRNQjc3T0pTdW5NbFNsVzdNNk1nYz1cZmlxdnd0VkFJTjJ2RHRnPERhN101NWdzdUtzYTdkJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJmNjY2NjYycpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl</span>
+                <span class="reporter-method-output">✅ User Get Payment Successful Page: https://dev.dialora.ai/signup/success?session_id=cs_test_b1ZXNLhHhqsukc74ZRBuybYF9IPRkbUDRcdZM1NrF1Onxb6wxSRk2VcMJQ&email=testuser1758363687580%40example.com</span>
+                <span class="reporter-method-output">✅ Email auto-populated correctly: testuser1758363687580@example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Login Page: https://dev.app.dialora.ai/login?email=testuser1758363687580%40example.com</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Valid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Valid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validLoginTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> Login Successful: Valid Email & Valid Password</span>
+                <span class="reporter-method-output">Logout Successfully</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Valid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validSignUpTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">✅ User successfully reached Purchase Plan page: https://dev.dialora.ai/signup/choose-plan?email=testuser1758363812513%40example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Payment Page: https://checkout.stripe.com/c/pay/cs_test_b1pffiLS0kjgch1xSCMhho26W0Avp4AvDV9bzfO50f7RbBLzSkMp9edO4l#fid2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2R1bE5gfCc%2FJ3VuWnFgdnFaMDRNYndmVEJGak5zXWpyT0A0XFRuYnNCS2Zsb1JOcWNPb3FDZGxXXW9NQT1HfFRNQjc3T0pTdW5NbFNsVzdNNk1nYz1cZmlxdnd0VkFJTjJ2RHRnPERhN101NWdzdUtzYTdkJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJmNjY2NjYycpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl</span>
+                <span class="reporter-method-output">✅ User Get Payment Successful Page: https://dev.dialora.ai/signup/success?session_id=cs_test_b1pffiLS0kjgch1xSCMhho26W0Avp4AvDV9bzfO50f7RbBLzSkMp9edO4l&email=testuser1758363812513%40example.com</span>
+                <span class="reporter-method-output">✅ Email auto-populated correctly: testuser1758363812513@example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Login Page: https://dev.app.dialora.ai/login?email=testuser1758363812513%40example.com</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailAndPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validSignUpTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">✅ User successfully reached Purchase Plan page: https://dev.dialora.ai/signup/choose-plan?email=testuser1758363935102%40example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Payment Page: https://checkout.stripe.com/c/pay/cs_test_b1ZRlT6Sag3cYiusyZ6R3JOIWBtuptTWvl1LvQKeXUjFgwhERnNAxKsEud#fid2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2R1bE5gfCc%2FJ3VuWnFgdnFaMDRNYndmVEJGak5zXWpyT0A0XFRuYnNCS2Zsb1JOcWNPb3FDZGxXXW9NQT1HfFRNQjc3T0pTdW5NbFNsVzdNNk1nYz1cZmlxdnd0VkFJTjJ2RHRnPERhN101NWdzdUtzYTdkJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJmNjY2NjYycpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl</span>
+                <span class="reporter-method-output">✅ User Get Payment Successful Page: https://dev.dialora.ai/signup/success?session_id=cs_test_b1ZRlT6Sag3cYiusyZ6R3JOIWBtuptTWvl1LvQKeXUjFgwhERnNAxKsEud&email=testuser1758363935102%40example.com</span>
+                <span class="reporter-method-output">✅ Email auto-populated correctly: testuser1758363935102@example.com</span>
+                <span class="reporter-method-output">✅ User successfully reached at Login Page: https://dev.app.dialora.ai/login?email=testuser1758363935102%40example.com</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Valid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Valid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">invalidEmailAndPasswordTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">❌ Login Failed: Invalid Email & Invalid Password</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">validLoginTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> Login Successful: Valid Email & Valid Password</span>
+                <span class="reporter-method-output">Logout Successfully</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-AutomationSuite" class="panel">
@@ -479,205 +584,199 @@ return data;
                 <span class="method-name">setup(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">1 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validLoginTest</span>
-                <span class="method-start">3434 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">validLoginTest</span>
-                <span class="method-start">9001 ms</span>
+                <span class="method-start">4024 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">30789 ms</span>
+                <span class="method-start">22754 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.SignUpTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(chrome)</span>
-                <span class="method-start">31040 ms</span>
+                <span class="method-start">22967 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validSignUpTest</span>
-                <span class="method-start">33171 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">36779 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.SignUpTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">38765 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">validSignUpTest</span>
-                <span class="method-start">48277 ms</span>
+                <span class="method-start">25619 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">149961 ms</span>
+                <span class="method-start">109787 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(chrome)</span>
-                <span class="method-start">150211 ms</span>
+                <span class="method-start">110008 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidPasswordTest</span>
-                <span class="method-start">152294 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.SignUpTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">161350 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">162479 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">invalidPasswordTest</span>
-                <span class="method-start">167066 ms</span>
+                <span class="method-start">111986 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">173678 ms</span>
+                <span class="method-start">113179 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(chrome)</span>
-                <span class="method-start">173884 ms</span>
+                <span class="method-start">113313 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidEmailTest</span>
-                <span class="method-start">175760 ms</span>
+                <span class="method-start">115289 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">188555 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(firefox)</span>
-                <span class="method-start">189514 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">invalidEmailTest</span>
-                <span class="method-start">194097 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">197021 ms</span>
+                <span class="method-start">116466 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(chrome)</span>
-                <span class="method-start">197209 ms</span>
+                <span class="method-start">116600 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidEmailAndPasswordTest</span>
-                <span class="method-start">199035 ms</span>
+                <span class="method-start">118454 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">215475 ms</span>
+                <span class="method-start">119593 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(firefox)</span>
-                <span class="method-start">216610 ms</span>
+                <span class="method-start">119735 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">220315 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(edge)</span>
-                <span class="method-start">220535 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">invalidEmailAndPasswordTest</span>
-                <span class="method-start">221788 ms</span>
-              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validLoginTest</span>
-                <span class="method-start">222687 ms</span>
+                <span class="method-start">125472 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">243468 ms</span>
+                <span class="method-start">144291 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.SignUpTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(firefox)</span>
+                <span class="method-start">145123 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validSignUpTest</span>
+                <span class="method-start">150553 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">249280 ms</span>
+                <span class="method-start">228042 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(firefox)</span>
+                <span class="method-start">228796 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidPasswordTest</span>
+                <span class="method-start">233955 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">235428 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(firefox)</span>
+                <span class="method-start">236244 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidEmailTest</span>
+                <span class="method-start">241022 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">242361 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(firefox)</span>
+                <span class="method-start">243189 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidEmailAndPasswordTest</span>
+                <span class="method-start">247651 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">249015 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(edge)</span>
+                <span class="method-start">249814 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validLoginTest</span>
+                <span class="method-start">251876 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">270780 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.SignUpTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(edge)</span>
-                <span class="method-start">249527 ms</span>
+                <span class="method-start">270969 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validSignUpTest</span>
-                <span class="method-start">251495 ms</span>
+                <span class="method-start">273141 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">366566 ms</span>
+                <span class="method-start">343364 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(edge)</span>
-                <span class="method-start">366850 ms</span>
+                <span class="method-start">343619 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidPasswordTest</span>
-                <span class="method-start">368767 ms</span>
+                <span class="method-start">345409 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">390066 ms</span>
+                <span class="method-start">346652 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(edge)</span>
-                <span class="method-start">390272 ms</span>
+                <span class="method-start">346805 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidEmailTest</span>
-                <span class="method-start">392376 ms</span>
+                <span class="method-start">348913 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">413696 ms</span>
+                <span class="method-start">350532 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup(edge)</span>
-                <span class="method-start">413902 ms</span>
+                <span class="method-start">350697 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidEmailAndPasswordTest</span>
-                <span class="method-start">416287 ms</span>
+                <span class="method-start">352700 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">437914 ms</span>
+                <span class="method-start">353907 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

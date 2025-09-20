@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Sep 19 18:05:12 IST 2025</td>
+<td>Started on:</td><td>Sat Sep 20 14:41:28 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>113 seconds (113965 ms)</td>
+<tr><td>Total time:</td><td>27 seconds (27120 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,59 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.SignUpTest.validSignUpTest()'><b>validSignUpTest</b><br>Test class: tests.SignUpTest</td>
+<td title='tests.LoginTest.invalidEmailTest()'><b>invalidEmailTest</b><br>Test class: tests.LoginTest<br/>
+<a href="#Output-990442552" onClick='toggleBox("Output-990442552", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-990442552" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-990442552">
+❌ Login Failed: Invalid Email & Valid Password<br/>
+</div>
+</td>
 <td></td>
-<td>106</td>
-<td>tests.SignUpTest@6150c3ec</td></tr>
+<td>1</td>
+<td>tests.LoginTest@2f4948e4</td></tr>
+<tr>
+<td title='tests.LoginTest.invalidPasswordTest()'><b>invalidPasswordTest</b><br>Test class: tests.LoginTest<br/>
+<a href="#Output-806572546" onClick='toggleBox("Output-806572546", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-806572546" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-806572546">
+❌ Login Failed: Valid Email & Invalid Password<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>tests.LoginTest@2f4948e4</td></tr>
+<tr>
+<td title='tests.LoginTest.validLoginTest()'><b>validLoginTest</b><br>Test class: tests.LoginTest<br/>
+<a href="#Output-310212872" onClick='toggleBox("Output-310212872", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-310212872" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-310212872">
+ Login Successful: Valid Email & Valid Password<br/>
+🔗 Current URL After Login: https://dev.app.dialora.ai/verifying/subscription<br/>
+✅ User successfully reached Dashboard page: https://dev.app.dialora.ai/verifying/subscription<br/>
+🔗 Current URL After Login: https://dev.app.dialora.ai/verifying/subscription<br/>
+✅ User successfully reached Dashboard page: https://dev.app.dialora.ai/verifying/subscription<br/>
+✅ User successfully reached Dashboard pagehttps://dev.app.dialora.ai/dashboard<br/>
+Logout Successfully<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>tests.LoginTest@2f4948e4</td></tr>
+<tr>
+<td title='tests.LoginTest.invalidEmailAndPasswordTest()'><b>invalidEmailAndPasswordTest</b><br>Test class: tests.LoginTest<br/>
+<a href="#Output-2049121789" onClick='toggleBox("Output-2049121789", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2049121789" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2049121789">
+❌ Login Failed: Invalid Email & Invalid Password<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>tests.LoginTest@2f4948e4</td></tr>
 </table><p>
 </body>
 </html>

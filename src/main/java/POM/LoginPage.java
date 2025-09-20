@@ -1,6 +1,7 @@
 package POM;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import webDriverUtility.WebDriverUtilityProgram;
@@ -24,7 +25,14 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement SUBMIT;
 	
-	@FindBy(xpath = "//button[@id='radix-:rv:']")
+	@FindBy(xpath = "//span[text()='Dashboard']")
+	private WebElement DASHBOARD;
+	
+	@FindAll({
+	    @FindBy(xpath = "//button[@data-testid='user-profile-button']"),
+	    @FindBy(xpath = "//button[@id='radix-:rv:']"),
+	    @FindBy(xpath = "//button[@data-testid='user-profile-button' and @id='radix-:rv:']"),
+	})
 	private WebElement LOGOUTDROPDOWN;
 	
 	@FindBy(xpath = "//div[@role='menuitem' and contains(., 'Log out')]")
@@ -73,35 +81,17 @@ public class LoginPage {
 	public WebElement getWRONGEMAIL() {
 		return WRONGEMAIL;
 	}
-	
-	public void loginToApp(String username,String password) throws Throwable{
-		EMAIL.sendKeys(username);
-		System.out.println("Emailed Entered");
-		PASSWORD.sendKeys(password);
-		System.out.println("Password Entered");
-		SUBMIT.click();
-		System.out.println("Submit button clicked");
-		Thread.sleep(20000);
+
+	public WebElement getDASHBOARD() {
+		return DASHBOARD;
 	}
 
-	public void logoutTOApp() throws Throwable {
-		// verify by URL
-	    String expectedUrl = "https://dev.app.dialora.ai/dashboard";
-	    String actualUrl = driver.getCurrentUrl();
+	public void setDASHBOARD(WebElement dASHBOARD) {
+		DASHBOARD = dASHBOARD;
+	}
 
-	    if (actualUrl.equals(expectedUrl)) {
-	        System.out.println("✅ User successfully reached Dashboard page" + actualUrl);
-	    } else {
-	        System.out.println("❌ Login failed or wrong page loaded. Actual: " + actualUrl);
-	    }
-		
-		Thread.sleep(10000);
-		wb.visibilityOfElement(driver, LOGOUTDROPDOWN);
-		Thread.sleep(5000);
-		LOGOUTDROPDOWN.click();
-		System.out.println("Logout Dropdown clicked");
-		wb.visibilityOfElement(driver, LOGOUTBTN);
-		LOGOUTBTN.click();
-		System.out.println("Logout button clicked");
-	   	}
+	public WebElement getAGENTS() {
+		return AGENTS;
+	}
+	
 }
