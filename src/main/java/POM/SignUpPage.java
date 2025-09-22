@@ -1,12 +1,14 @@
 package POM;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import webDriverUtility.WebDriverUtilityProgram;
 
@@ -24,227 +26,136 @@ public class SignUpPage {
 	private WebElement AcceptAllBTN;
 	
 	@FindBy(linkText = "Signup?")
-	private WebElement SIGNUPLINK;
+	private WebElement SignUpLink;
 	
 	@FindBy(xpath = "//input[@placeholder='John Doe']")
-	private WebElement NAME;
-	
-	@FindBy(xpath = "//p[contains(text(),'Name must')]")
-	private WebElement InvaliNameMsg;
+	private WebElement NameField;
 	
 	@FindBy(name = "email")
-	private WebElement EMAIL;
-	
-	@FindBy(xpath = "//p[contains(text(),'Email must')]")
-	private WebElement InvalidEmailMsg;
+	private WebElement EmailField;
 	
 	@FindBy(xpath = "//select[contains(@aria-label,'country')]")
-	private WebElement COUNTRYCODE;
+	private WebElement CuntryCode;
 	
 	@FindBy(xpath = "//input[@class='PhoneInputInput']")
-	private WebElement PhoneNum;
-	
-	@FindBy(xpath = "//p[contains(text(),'number must')]")
-	private WebElement InvalidPhnNumMsg;
+	private WebElement PhoneNumField;
 	
 	@FindBy(xpath = "//input[@type='password']")
-	private WebElement PASSWORD;
+	private WebElement PasswordField;
 	
 	@FindBy(xpath = "//input[@name='password']/following-sibling::button")
-	private WebElement EYEICON1;
-	
-	@FindBy(xpath = "//p[contains(text(),'Password must')]")
-	private WebElement WRNGPASSMSG;
+	private WebElement EyeIcon1;
 	
 	@FindBy(xpath = "//input[@name='confirmPassword']")
-	private WebElement CNFPASSMSG;
+	private WebElement CnfPasswordField;
 	
 	@FindBy(xpath = "//input[@name='confirmPassword']/following-sibling::button")
-	private WebElement EYEICON2;
-	
-	@FindBy(xpath = "//p[contains(text(),'as Password')]")
-	private WebElement WRNGCNFPASSMSG;
+	private WebElement EyeIcon2;
 	
 	@FindBy(xpath = "//button[text()='Start 3 Days Free Trial']")
-	private WebElement SUBMITBTN;
-	
-	@FindBy(id = "zs_fl_close")
-	private WebElement CLOSEBTN;
+	private WebElement SubmitBTN;
 	
 	@FindBy(xpath = "//button[@type='submit']")
-	private WebElement SUBSCRIPTIONBTN;
+	private WebElement SubscriptionBTN;
 	
 	@FindBy(id = "cardNumber")
-	private WebElement EnterCardNum;
+	private WebElement EnterCardNumField;
 	
 	@FindBy (id = "cardExpiry")
-	private WebElement CARDEXP;
+	private WebElement EnterCardExpField;
 	
 	@FindBy (id = "cardCvc")
-	private WebElement CARDCVC;
+	private WebElement EnterCardCVCField;
 	
 	@FindBy (id= "billingName")
-	private WebElement BILLINGNAME;
+	private WebElement EnterBillingNameField;
 	
 	@FindBy (id="billingCountry")
-	private WebElement SELCOUNTRY;
+	private WebElement SelectCountryDropdown;
 	
 	@FindBy (id="billingAddressLine1")
-	private WebElement ADDRESS;
+	private WebElement AddressField1;
 	
 	@FindBy (id = "billingAddressLine2")
-	private WebElement ADDRESS2;
+	private WebElement AddressField2;
 	
 	@FindBy (id = "billingPostalCode")
-	private WebElement PINCODE;
+	private WebElement PincodeField;
 	
 	@FindBy (id = "billingLocality")
-	private WebElement CITY;
+	private WebElement CityField;
 	
 	@FindBy (id = "billingAdministrativeArea")
-	private WebElement STATE;
+	private WebElement StateField;
 	
 	@FindBy (id = "submit-button-processing-label")
-	private WebElement PaymentSubmitBTN;
+	private WebElement LoaderAtPaymentPage;
 	
 	@FindBy (xpath = "//span[contains(@class,'SubmitButton-Text') and normalize-space(text())='Start trial']")
 	private WebElement StartTrialBTN;
 	
 	@FindBy (name = "email")
-	private WebElement LOGINEMAIL;
+	private WebElement LoginEmailField;
 	
 	@FindBy (xpath = "//span[text()=\"Processing...\"]")
-	private WebElement PROCESSINGBTN;
+	private WebElement ProcessingBTN;
 
-	public WebElement getAcceptAllBTN() {
-		return AcceptAllBTN;
-	}
-
-	public WebElement getSIGNUPLINK() {
-		return SIGNUPLINK;
-	}
-
-	public WebElement getNAME() {
-		return NAME;
-	}
-
-	public WebElement getInvaliNameMsg() {
-		return InvaliNameMsg;
-	}
-
-	public WebElement getEMAIL() {
-		return EMAIL;
-	}
-
-	public WebElement getInvalidEmailMsg() {
-		return InvalidEmailMsg;
-	}
-
-	public WebElement getCOUNTRYCODE() {
-		return COUNTRYCODE;
-	}
-
-	public WebElement getPhoneNum() {
-		return PhoneNum;
-	}
-
-	public WebElement getInvalidPhnNumMsg() {
-		return InvalidPhnNumMsg;
-	}
-
-	public WebElement getPASSWORD() {
-		return PASSWORD;
-	}
-
-	public WebElement getEYEICON1() {
-		return EYEICON1;
-	}
-
-	public WebElement getWRNGPASSMSG() {
-		return WRNGPASSMSG;
-	}
-
-	public WebElement getCNFPASSMSG() {
-		return CNFPASSMSG;
-	}
-
-	public WebElement getEYEICON2() {
-		return EYEICON2;
-	}
-
-	public WebElement getWRNGCNFPASSMSG() {
-		return WRNGCNFPASSMSG;
-	}
-
-	public WebElement getSUBMITBTN() {
-		return SUBMITBTN;
-	}
-
-	public WebElement getCLOSEBTN() {
-		return CLOSEBTN;
-	}
-
-	public WebElement getSUBSCRIPTIONBTN() {
-		return SUBSCRIPTIONBTN;
-	}
-
-	public WebElement getEnterCardNum() {
-		return EnterCardNum;
-	}
-
-	public WebElement getCARDEXP() {
-		return CARDEXP;
-	}
-
-	public WebElement getCARDCVC() {
-		return CARDCVC;
-	}
-
-	public WebElement getBILLINGNAME() {
-		return BILLINGNAME;
-	}
-
-	public WebElement getSELCOUNTRY() {
-		return SELCOUNTRY;
-	}
-
-	public WebElement getADDRESS() {
-		return ADDRESS;
-	}
-
-	public WebElement getADDRESS2() {
-		return ADDRESS2;
-	}
-
-	public WebElement getPINCODE() {
-		return PINCODE;
-	}
-
-	public WebElement getCITY() {
-		return CITY;
-	}
-
-	public WebElement getSTATE() {
-		return STATE;
-	}
-
-	public WebElement getPaymentSubmitBTN() {
-		return PaymentSubmitBTN;
-	}
-
-	public WebElement getStartTrialBTN() {
-		return StartTrialBTN;
-	}
-
-	public WebElement getLOGINEMAIL() {
-		return LOGINEMAIL;
-	}
-
-	public WebElement getPROCESSINGBTN() {
-		return PROCESSINGBTN;
+	public void openSignup() {
+		wb.visibilityOfElement(driver, SignUpLink);
+		SignUpLink.click();
+		AcceptAllBTN.click();
 	}
 	
+	public void fillSignupPage(String name,String email,String phone,String password) {
+		NameField.sendKeys(name);
+		EmailField.sendKeys(email);
+		wb.select(CuntryCode,"IN");
+		PhoneNumField.sendKeys(phone);
+		PasswordField.sendKeys(password);
+		wb.mouseClickOnWebElement(driver, EyeIcon1);
+		
+		CnfPasswordField.sendKeys(password);
+		wb.mouseClickOnWebElement(driver, EyeIcon2);
+	}
 	
+	public void submitSignup() {
+		wb.visibilityOfElement(driver, SubmitBTN);
+		SubmitBTN.click();
+	}
 	
+	public void clickSubscription() {
+		wb.waitForPageLoad(driver, 20);
+		wb.elementxTobeClickable(driver, SubscriptionBTN);
+		SubscriptionBTN.click();
+	}
 	
+	public void fillPaymentDetails() {
+		wb.waitForPageLoad(driver, 30);
+		wb.visibilityOfElement(driver, EnterCardNumField);
+		EnterCardNumField.sendKeys("4242424242424242");
+        EnterCardExpField.sendKeys("1230");
+        EnterCardCVCField.sendKeys("123");
+        wb.select(SelectCountryDropdown, "IN");
+        EnterBillingNameField.sendKeys("Codiste");
+        AddressField1.sendKeys("Sarkhej - Gandhinagar Highway");
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
+        AddressField2.sendKeys("805-807");
+        PincodeField.sendKeys("382470");
+        CityField.sendKeys("Ahmedabad");
+        wb.select(StateField, "GJ");
+	}
+	
+	 public void startTrial() {
+	        wb.mouseClickOnWebElement(driver, StartTrialBTN);
+	        
+	        // Wait until StartTrial button enabled ho jaye
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+	        wait.until(driver -> StartTrialBTN.isEnabled());
+	    }
+
+	    public String getAutoPopulatedEmail() {
+	    		wb.waitForPageLoad(driver,30);
+	    		wb.visibilityOfElement(driver, LoginEmailField);
+	        return LoginEmailField.getAttribute("value");
+	    }
 }
