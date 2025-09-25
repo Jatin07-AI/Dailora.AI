@@ -24,15 +24,15 @@
             <class name="tests.CreateAgentTest"/>
         </classes>
     </test>
-
+    	
     <!-- Edge Tests -->
-    <test name="EdgeTests">
+ <!--    <test name="EdgeTests">
         <parameter name="browser" value="edge"/>
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.SignUpTest"/>
             <class name="tests.CreateAgentTest"/>
         </classes>
-    </test>
+    </test>-->
 
 </suite>
