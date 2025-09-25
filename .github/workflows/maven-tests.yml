@@ -1,4 +1,4 @@
-name: Run Selenium TestNG Suite
+name: Run Selenium Tests Individually
 
 on:
   push:
@@ -62,16 +62,6 @@ jobs:
           sudo apt update
           sudo apt install -y microsoft-edge-stable
           microsoft-edge --version
-
-      # EdgeDriver installation with auto version detection
-      - name: Install EdgeDriver
-        run: |
-          EDGE_VERSION=$(microsoft-edge --version | awk '{print $3}')
-          echo "Detected Edge Version: $EDGE_VERSION"
-          wget "https://msedgedriver.azureedge.net/${EDGE_VERSION}/edgedriver_linux64.zip"
-          unzip edgedriver_linux64.zip
-          sudo mv msedgedriver /usr/local/bin/
-          msedgedriver --version
 
       # Run Chrome Tests
       - name: Run Chrome Tests
