@@ -1,39 +1,74 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="AutomationSuite" parallel="tests" thread-count="1">
 
-	<!-- Listeners -->
     <listeners>
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-      <!-- Chrome Tests -->
-  <test name="ChromeTests">
+    <!-- Chrome Individual Tests -->
+    <test name="Chrome_LoginTest">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.SignUpTest"/>
-           <class name="tests.CreateAgentTest"/> 
-        </classes>
-    </test> 
-    
-    <!-- Firefox Tests -->
-     <test name="FirefoxTests">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="tests.LoginTest"/>
-            <class name="tests.SignUpTest"/>
-           <class name="tests.CreateAgentTest"/> 
         </classes>
     </test>
 
-    <!-- Edge Tests -->
-        <test name="EdgeTests">
+    <test name="Chrome_SignUpTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+
+    <test name="Chrome_CreateAgentTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.CreateAgentTest"/>
+        </classes>
+    </test>
+
+    <!-- Firefox Individual Tests -->
+    <test name="Firefox_LoginTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Firefox_SignUpTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+
+    <test name="Firefox_CreateAgentTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.CreateAgentTest"/>
+        </classes>
+    </test>
+
+    <!-- Edge Individual Tests -->
+    <test name="Edge_LoginTest">
         <parameter name="browser" value="edge"/>
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.SignUpTest"/>
-          <class name="tests.CreateAgentTest"/>  
         </classes>
-    </test> 
+    </test>
+
+    <test name="Edge_SignUpTest">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+
+    <test name="Edge_CreateAgentTest">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="tests.CreateAgentTest"/>
+        </classes>
+    </test>
 
 </suite>

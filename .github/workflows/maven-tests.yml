@@ -29,16 +29,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install Browsers
+      - name: Install Required Tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip curl gnupg
+          sudo apt-get install -y wget unzip curl gnupg tar
 
-          # ✅ Chrome
+      # Chrome installation
+      - name: Install Google Chrome
+        run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
+          google-chrome --version
 
-          # ✅ Firefox (fresh install with fix)
+      # Firefox installation
+      - name: Install Firefox
+        run: |
           FIREFOX_VERSION=131.0
           wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-${FIREFOX_VERSION}&os=linux64&lang=en-US"
           tar xjf firefox.tar.bz2
@@ -47,18 +52,40 @@ jobs:
           sudo ln -s /opt/firefox/firefox /usr/bin/firefox
           firefox --version
 
-          # ✅ Edge
+      # Edge installation
+      - name: Install Microsoft Edge
+        run: |
           curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
           sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
           sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
           sudo rm microsoft.gpg
           sudo apt update
           sudo apt install -y microsoft-edge-stable
+          microsoft-edge --version
 
-      - name: Run TestNG Suite
+      # EdgeDriver installation with auto version detection
+      - name: Install EdgeDriver
         run: |
-          mvn clean test -Dheadless=true
+          EDGE_VERSION=$(microsoft-edge --version | awk '{print $3}')
+          echo "Detected Edge Version: $EDGE_VERSION"
+          wget "https://msedgedriver.azureedge.net/${EDGE_VERSION}/edgedriver_linux64.zip"
+          unzip edgedriver_linux64.zip
+          sudo mv msedgedriver /usr/local/bin/
+          msedgedriver --version
 
+      # Run Chrome Tests
+      - name: Run Chrome Tests
+        run: mvn clean test -Dbrowser=chrome -Dheadless=true
+
+      # Run Firefox Tests
+      - name: Run Firefox Tests
+        run: mvn clean test -Dbrowser=firefox -Dheadless=true
+
+      # Run Edge Tests
+      - name: Run Edge Tests
+        run: mvn clean test -Dbrowser=edge -Dheadless=true
+
+      # Upload Surefire Reports
       - name: Upload Surefire Reports
         uses: actions/upload-artifact@v4
         with:
