@@ -104,6 +104,7 @@ public class BaseTest {
 
             if (isHeadless) {
                 options.addArguments("--headless=new", "--window-size=1920,1080");
+                options.addArguments("--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
             }
             driver = new EdgeDriver(options);
         }
