@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -55,10 +56,17 @@ public class SignUpPage {
 	@FindBy(xpath = "//button[text()='Start 3 Days Free Trial']")
 	private WebElement SubmitBTN;
 	
-	@FindBy(xpath = "//button[@type='submit']")
+	@FindAll({
+	    @FindBy(xpath = "//button[@type='submit']"),
+	    @FindBy(xpath = "//button[@data-test-id='choose-trial-plan']")
+	})
 	private WebElement SubscriptionBTN;
-	
-	@FindBy(id = "cardNumber")
+
+	@FindAll({
+	    @FindBy(id="cardNumber"),
+	    @FindBy(name  = "cardNumber"),
+	    @FindBy(xpath = "//input[@aria-label='Card number']")
+	})
 	private WebElement EnterCardNumField;
 	
 	@FindBy (id = "cardExpiry")
@@ -118,20 +126,20 @@ public class SignUpPage {
 		wb.mouseClickOnWebElement(driver, EyeIcon2);
 	}
 	
-	public void submitSignup() {
+	public void submitSignup() throws InterruptedException {
 		wb.visibilityOfElement(driver, SubmitBTN);
 		SubmitBTN.click();
+		Thread.sleep(5000);
 	}
 	
 	public void clickSubscription() {
 		wb.waitForPageLoad(driver, 20);
-		wb.elementxTobeClickable(driver, SubscriptionBTN);
 		SubscriptionBTN.click();
 	}
 	
-	public void fillPaymentDetails() {
-		wb.waitForPageLoad(driver, 30);
-		wb.visibilityOfElement(driver, EnterCardNumField);
+	public void fillPaymentDetails() throws Throwable{
+		wb.waitForPageLoad(driver, 80);
+		wb.elementxTobeClickable(driver, EnterCardNumField);
 		EnterCardNumField.sendKeys("4242424242424242");
         EnterCardExpField.sendKeys("1230");
         EnterCardCVCField.sendKeys("123");

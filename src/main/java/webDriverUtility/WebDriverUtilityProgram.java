@@ -2,9 +2,12 @@ package webDriverUtility;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -29,20 +32,19 @@ public class WebDriverUtilityProgram {
 	        .executeScript("return document.readyState").equals("complete"));
 	}
 
-	
-	// Wait for element located by a locator (CSS or XPath) to become invisible
+		// Wait for element located by a locator (CSS or XPath) to become invisible
 	public void waitForInvisibilityOfElement(WebDriver driver,WebElement element, int timeoutInSeconds) {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 	    wait.until(ExpectedConditions.invisibilityOf(element));
 	}
 	
 	public void visibilityOfElement(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public void elementxTobeClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
@@ -63,6 +65,11 @@ public class WebDriverUtilityProgram {
 		Select sel = new Select(element);
 		sel.selectByIndex(index);
 	}
+	
+	public void clickElementByJS(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+    }
 	
 	public void select(WebElement element,String value) {
 		Select sel = new Select(element);
@@ -137,4 +144,10 @@ public class WebDriverUtilityProgram {
 		jse.executeScript("window.scrollBy(" + x + "," + y + ")");
 
 	}
+	
+	public void scrollToElement(WebDriver driver, WebElement element) {
+	    JavascriptExecutor jse = (JavascriptExecutor) driver;
+	    jse.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
 }

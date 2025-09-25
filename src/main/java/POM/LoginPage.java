@@ -35,7 +35,9 @@ public class LoginPage {
 	})
 	private WebElement LOGOUTDROPDOWN;
 	
-	@FindBy(xpath = "//div[@role='menuitem' and contains(., 'Log out')]")
+	@FindAll({
+	@FindBy(xpath = "//div[@role='menuitem' and contains(., 'Log out')]"),
+	@FindBy(xpath = "//div[text()='Log Out']"),})
 	private WebElement LOGOUTBTN;
 	
 	@FindBy(id = "zs_fl_close")

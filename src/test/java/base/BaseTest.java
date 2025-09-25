@@ -16,95 +16,116 @@ import fileUtility.PropertyFileUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import javaUtility.JavaUtilityProgram;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BaseTest {
 
-    // ✅ ThreadLocal driver for parallel safe execution
     private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     protected String browserName;
-    
-    // ✅ Getter for driver
+
     public static WebDriver getDriver() {
         return tlDriver.get();
     }
 
     @Parameters("browser")
     @BeforeMethod
-    public void setup(@Optional("chrome") String BROWSER) throws Throwable {
+    public void setup(@Optional("chrome") String BROWSER,org.testng.ITestContext context) throws Throwable {
 
         PropertyFileUtility pp = new PropertyFileUtility();
         String URL = pp.toGetDataFromPropertiesFile("url");
 
         WebDriver driver;
-        browserName = BROWSER; // ✅ store browser name
-        // ✅ Headless mode check (default false)
+        browserName = BROWSER;
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
 
-        // ✅ Chrome setup
+        // ✅ Chrome
         if (BROWSER.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
+            options.setAcceptInsecureCerts(true); // SSL errors ignore
+
+            // disable popups/notifications
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("profile.default_content_setting_values.notifications", 2);
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            options.setExperimentalOption("prefs", prefs);
+
             if (isHeadless) {
-                options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
-                options.addArguments("--disable-popup-blocking");
-                options.addArguments("--disable-notifications");
-                options.addArguments("--disable-infobars");
-                options.addArguments("--disable-extensions");
-                options.addArguments("--disable-popup-blocking");
-                options.addArguments("--disable-notifications");
-                options.addArguments("--disable-infobars");
-                options.addArguments("--disable-extensions");
+                options.addArguments("--headless=new");
+                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--disable-software-rasterizer");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--force-device-scale-factor=1");
+                options.addArguments("--high-dpi-support=1");
+
             }
             driver = new ChromeDriver(options);
+        }
 
-        } 
+        // ✅ Firefox
         else if (BROWSER.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
+            options.setAcceptInsecureCerts(true);
+            options.addPreference("dom.webnotifications.enabled", false);
+            options.addPreference("geo.enabled", false);
+
             if (isHeadless) {
                 options.addArguments("--headless");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--width=1920");
+                options.addArguments("--height=1080");
             }
             driver = new FirefoxDriver(options);
         }
 
-        // ✅ Edge setup with dual-mode
+        // ✅ Edge
         else if (BROWSER.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
 
-            if (isHeadless) {
-                // ✅ Headless for CI / GitHub Actions
-                options.addArguments("--headless=new", "--disable-gpu", "--window-size=1920,1080");
-                System.setProperty("webdriver.edge.driver", "/usr/bin/msedgedriver"); // pre-installed path
-                driver = new EdgeDriver(options);
+            boolean isCI = System.getenv("GITHUB_ACTIONS") != null; // GitHub Actions detect
+
+            if (isCI) {
+                // CI environment → WebDriverManager auto download
+                WebDriverManager.edgedriver().setup();
             } else {
-                // ✅ Local machine → manual exe
-                System.setProperty("webdriver.edge.driver", "C:\\Drivers\\edgedriver_win64\\msedgedriver.exe");
-                driver = new EdgeDriver(options);
+                // Local environment → use locally installed driver
+                String edgeDriverPath = "C:\\Drivers\\edgedriver_win64\\msedgedriver.exe"; // apna local path
+                System.setProperty("webdriver.edge.driver", edgeDriverPath);
             }
 
+            EdgeOptions options = new EdgeOptions();
+            options.setAcceptInsecureCerts(true);
+            options.addArguments("--disable-popup-blocking");
+            options.addArguments("--disable-notifications");
 
-        } else {
+            if (isHeadless) {
+                options.addArguments("--headless=new", "--window-size=1920,1080");
+            }
+            driver = new EdgeDriver(options);
+        }
+
+        else {
             throw new RuntimeException("Invalid Browser: " + BROWSER);
         }
 
-        // ✅ Set ThreadLocal driver
         tlDriver.set(driver);
+        
+        // 👉 Listener ke liye driver context me set karo
+        context.setAttribute("driver", driver);
 
-        // ✅ Maximize window and open URL
         getDriver().manage().window().maximize();
         getDriver().get(URL);
-        
-     // ✅ print date + browser
+
         JavaUtilityProgram jp = new JavaUtilityProgram();
         System.out.println("🕒 Test Started At: " + jp.getCurrentDateAndTime() + " | Browser: " + browserName);
-    
     }
 
     @AfterMethod
     public void tearDown() {
-        // ✅ Quit driver and cleanup ThreadLocal
         if (getDriver() != null) {
             getDriver().quit();
             tlDriver.remove();

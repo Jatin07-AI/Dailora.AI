@@ -37,10 +37,11 @@ public class LoginTest extends BaseTest {
 	            wb.visibilityOfElement(driver, lp.getAGENTS());
 	            lp.getAGENTS().click();
 	            Thread.sleep(5000);
-	            wb.elementxTobeClickable(driver, lp.getLOGOUTDROPDOWN());
-	            lp.getLOGOUTDROPDOWN().click();
-	            wb.visibilityOfElement(driver, lp.getLOGOUTBTN());
-	            lp.getLOGOUTBTN().click();
+	            wb.visibilityOfElement(driver, lp.getLOGOUTDROPDOWN());         
+	            wb.mouseClickOnWebElement(driver, lp.getLOGOUTDROPDOWN());
+	            Thread.sleep(2000);
+	            //wb.elementxTobeClickable(driver, lp.getLOGOUTBTN());
+	            wb.clickElementByJS(driver, lp.getLOGOUTBTN());
 	            Reporter.log("Logout Successfully", true);
 	            break;
 

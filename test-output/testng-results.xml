@@ -1,187 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[✅ Login Successful: Valid Email & Valid Password]]>
+      <![CDATA[STEP: Enter email and password]]>
     </line>
     <line>
-      <![CDATA[Logout Successfully]]>
+      <![CDATA[RESULT: Login successful with email: jatin.p@codiste.com]]>
     </line>
     <line>
-      <![CDATA[❌ Login Failed: Valid Email & Invalid Password]]>
+      <![CDATA[STEP: Wait and click on Create Agent button]]>
     </line>
     <line>
-      <![CDATA[❌ Login Failed: Invalid Email & Valid Password]]>
+      <![CDATA[RESULT: Create Agent button clicked successfully]]>
     </line>
     <line>
-      <![CDATA[❌ Login Failed: Invalid Email & Invalid Password]]>
+      <![CDATA[STEP: Select agent template]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Agent template selected successfully]]>
+    </line>
+    <line>
+      <![CDATA[STEP: Assign phone number to agent]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Clicked on phone number dropdown]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Phone number selected]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Phone number assigned successfully]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Scrolled to Save button]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Page refreshed]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Agent saved successfully]]>
+    </line>
+    <line>
+      <![CDATA[Popup did not appear, continue execution]]>
+    </line>
+    <line>
+      <![CDATA[STEP: Configure Get a Call]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Clicked on Get a Call button]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Clicked on Phone Number dropdown]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Selected phone number from options]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Clicked on Country dropdown]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Selected India as country]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Entered phone number]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Phone number saved successfully]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Page refreshed after saving phone number]]>
+    </line>
+    <line>
+      <![CDATA[ACTION: Delete button clicked via JS]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Alert dialog opened successfully]]>
+    </line>
+    <line>
+      <![CDATA[RESULT: Proceed button clicked normally]]>
+    </line>
+    <line>
+      <![CDATA[Deleted Agent Successfully]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-09-22T12:24:06 IST" name="Default suite" finished-at="2025-09-22T12:24:32 IST" duration-ms="26399">
+  <suite started-at="2025-09-25T13:04:49 IST" name="Default suite" finished-at="2025-09-25T13:07:11 IST" duration-ms="141571">
     <groups>
     </groups>
-    <test started-at="2025-09-22T12:24:06 IST" name="Default test" finished-at="2025-09-22T12:24:32 IST" duration-ms="26399">
-      <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:06 IST" name="setup" finished-at="2025-09-22T12:24:09 IST" duration-ms="3065" status="PASS">
+    <test started-at="2025-09-25T13:04:49 IST" name="Default test" finished-at="2025-09-25T13:07:11 IST" duration-ms="141571">
+      <class name="tests.CreateAgentTest">
+        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:04:49 IST" name="setup" finished-at="2025-09-25T13:04:52 IST" duration-ms="2864" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:09 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-22T12:24:19 IST" duration-ms="10170" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[validLogin]]>
-              </value>
-            </param>
             <param index="1">
               <value>
-                <![CDATA[jatin.p@codiste.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Jatin@123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[✅ Login Successful: Valid Email & Valid Password]]>
-            </line>
-            <line>
-              <![CDATA[Logout Successfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:19 IST" name="tearDown" finished-at="2025-09-22T12:24:19 IST" duration-ms="190" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:19 IST" name="setup" finished-at="2025-09-22T12:24:23 IST" duration-ms="3167" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
+                <![CDATA[org.testng.TestRunner@29528a22]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:23 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-22T12:24:24 IST" duration-ms="1448" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[invalidPassword]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jatin.p@codiste.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Jatin@1122]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:04:52 IST" name="createAndDeleteAgentTest" finished-at="2025-09-25T13:07:10 IST" duration-ms="138330" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[❌ Login Failed: Valid Email & Invalid Password]]>
+              <![CDATA[STEP: Enter email and password]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Login successful with email: jatin.p@codiste.com]]>
+            </line>
+            <line>
+              <![CDATA[STEP: Wait and click on Create Agent button]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Create Agent button clicked successfully]]>
+            </line>
+            <line>
+              <![CDATA[STEP: Select agent template]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Agent template selected successfully]]>
+            </line>
+            <line>
+              <![CDATA[STEP: Assign phone number to agent]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Clicked on phone number dropdown]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Phone number selected]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Phone number assigned successfully]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Scrolled to Save button]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Page refreshed]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Agent saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[Popup did not appear, continue execution]]>
+            </line>
+            <line>
+              <![CDATA[STEP: Configure Get a Call]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Clicked on Get a Call button]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Clicked on Phone Number dropdown]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Selected phone number from options]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Clicked on Country dropdown]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Selected India as country]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Entered phone number]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Phone number saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Page refreshed after saving phone number]]>
+            </line>
+            <line>
+              <![CDATA[ACTION: Delete button clicked via JS]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Alert dialog opened successfully]]>
+            </line>
+            <line>
+              <![CDATA[RESULT: Proceed button clicked normally]]>
+            </line>
+            <line>
+              <![CDATA[Deleted Agent Successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:24 IST" name="tearDown" finished-at="2025-09-22T12:24:24 IST" duration-ms="134" status="PASS">
+        </test-method> <!-- createAndDeleteAgentTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:07:10 IST" name="tearDown" finished-at="2025-09-25T13:07:11 IST" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:24 IST" name="setup" finished-at="2025-09-22T12:24:27 IST" duration-ms="2595" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:27 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-22T12:24:28 IST" duration-ms="1463" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[invalidEmail]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jatin123@codiste.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Jatin@123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[❌ Login Failed: Invalid Email & Valid Password]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:28 IST" name="tearDown" finished-at="2025-09-22T12:24:28 IST" duration-ms="147" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:28 IST" name="setup" finished-at="2025-09-22T12:24:31 IST" duration-ms="2342" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:31 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-22T12:24:32 IST" duration-ms="1472" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[invalidBoth]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jatin123@codiste.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Jatin@1122]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[❌ Login Failed: Invalid Email & Invalid Password]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@7e6f74c]" started-at="2025-09-22T12:24:32 IST" name="tearDown" finished-at="2025-09-22T12:24:32 IST" duration-ms="132" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.CreateAgentTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
