@@ -6,33 +6,43 @@
     </listeners>
 
     <!-- Chrome Tests -->
-    <test name="ChromeTests">
+	    <test name="ChromeTests">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.SignUpTest"/>
             <class name="tests.CreateAgentTest"/>
         </classes>
-    </test>
+    </test> 
 
     <!-- Firefox Tests -->
-    <test name="FirefoxTests">
+  	   <test name="FirefoxTests">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.SignUpTest"/>
             <class name="tests.CreateAgentTest"/>
         </classes>
-    </test>
+    </test> 
     	
     <!-- Edge Tests -->
- <!--    <test name="EdgeTests">
+  <!--    <test name="EdgeTests">
         <parameter name="browser" value="edge"/>
         <classes>
-            <class name="tests.LoginTest"/>
+	       <class name="tests.LoginTest"/> 
+            <class name="tests.SignUpTest"/>
+        		<class name="tests.CreateAgentTest"/> 
+        </classes>
+    </test> -->
+    
+    <!-- Brave Tests -->
+  <!--    <test name="BraveTests">
+        <parameter name="browser" value="Brave"/>
+        <classes>
+    			<class name="tests.LoginTest"/>
             <class name="tests.SignUpTest"/>
             <class name="tests.CreateAgentTest"/>
         </classes>
-    </test>-->
+    </test>  -->
 
 </suite>

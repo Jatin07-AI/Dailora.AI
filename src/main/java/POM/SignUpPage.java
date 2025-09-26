@@ -133,7 +133,8 @@ public class SignUpPage {
 	}
 	
 	public void clickSubscription() {
-		wb.waitForPageLoad(driver, 20);
+		wb.waitForPageLoad(driver, 50);
+		wb.elementxTobeClickable(driver, SubscriptionBTN);
 		SubscriptionBTN.click();
 	}
 	
@@ -162,8 +163,8 @@ public class SignUpPage {
 	    }
 
 	    public String getAutoPopulatedEmail() {
-	    		wb.waitForPageLoad(driver,30);
-	    		wb.visibilityOfElement(driver, LoginEmailField);
+	    		wb.waitForPageLoad(driver,60);
+	    		wb.elementxTobeClickable(driver, LoginEmailField);
 	        return LoginEmailField.getAttribute("value");
 	    }
 }

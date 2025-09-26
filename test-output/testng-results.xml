@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[✅ Signup Email: testuser1758869824279@example.com]]>
+    </line>
+    <line>
+      <![CDATA[✅ Auto-Populated Email: testuser1758869824279@example.com]]>
+    </line>
+    <line>
+      <![CDATA[✅ Signup Email: testuser1758869884841@example.com]]>
+    </line>
+    <line>
+      <![CDATA[✅ Auto-Populated Email: testuser1758869884841@example.com]]>
+    </line>
     <line>
       <![CDATA[STEP: Enter email and password]]>
     </line>
@@ -83,28 +95,62 @@
       <![CDATA[Deleted Agent Successfully]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-09-25T13:04:49 IST" name="Default suite" finished-at="2025-09-25T13:07:11 IST" duration-ms="141571">
+  <suite started-at="2025-09-26T12:27:01 IST" name="AutomationSuite" finished-at="2025-09-26T12:31:17 IST" duration-ms="255824">
     <groups>
     </groups>
-    <test started-at="2025-09-25T13:04:49 IST" name="Default test" finished-at="2025-09-25T13:07:11 IST" duration-ms="141571">
-      <class name="tests.CreateAgentTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:04:49 IST" name="setup" finished-at="2025-09-25T13:04:52 IST" duration-ms="2864" status="PASS">
+    <test started-at="2025-09-26T12:27:01 IST" name="EdgeTests" finished-at="2025-09-26T12:28:01 IST" duration-ms="59645">
+      <class name="tests.SignUpTest">
+        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@1f2586d6]" started-at="2025-09-26T12:27:01 IST" name="setup" finished-at="2025-09-26T12:27:04 IST" duration-ms="2584" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[edge]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@29528a22]]>
+                <![CDATA[org.testng.TestRunner@515ab3f2]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:04:52 IST" name="createAndDeleteAgentTest" finished-at="2025-09-25T13:07:10 IST" duration-ms="138330" status="PASS">
+        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@1f2586d6]" started-at="2025-09-26T12:27:04 IST" name="validSignUpTest" finished-at="2025-09-26T12:28:00 IST" duration-ms="56701" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[✅ Signup Email: testuser1758869824279@example.com]]>
+            </line>
+            <line>
+              <![CDATA[✅ Auto-Populated Email: testuser1758869824279@example.com]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validSignUpTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@1f2586d6]" started-at="2025-09-26T12:28:00 IST" name="tearDown" finished-at="2025-09-26T12:28:01 IST" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SignUpTest -->
+    </test> <!-- EdgeTests -->
+    <test started-at="2025-09-26T12:28:01 IST" name="BraveTests" finished-at="2025-09-26T12:31:17 IST" duration-ms="196145">
+      <class name="tests.CreateAgentTest">
+        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@f79e]" started-at="2025-09-26T12:28:53 IST" name="setup" finished-at="2025-09-26T12:28:56 IST" duration-ms="2943" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Brave]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6d0e45a5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@f79e]" started-at="2025-09-26T12:28:56 IST" name="createAndDeleteAgentTest" finished-at="2025-09-26T12:31:17 IST" duration-ms="140686" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP: Enter email and password]]>
@@ -189,11 +235,43 @@
             </line>
           </reporter-output>
         </test-method> <!-- createAndDeleteAgentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CreateAgentTest@1f2586d6]" started-at="2025-09-25T13:07:10 IST" name="tearDown" finished-at="2025-09-25T13:07:11 IST" duration-ms="336" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CreateAgentTest@f79e]" started-at="2025-09-26T12:31:17 IST" name="tearDown" finished-at="2025-09-26T12:31:17 IST" duration-ms="215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.CreateAgentTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tests.SignUpTest">
+        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@8c3b9d]" started-at="2025-09-26T12:28:01 IST" name="setup" finished-at="2025-09-26T12:28:04 IST" duration-ms="3490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Brave]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@6d0e45a5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@8c3b9d]" started-at="2025-09-26T12:28:04 IST" name="validSignUpTest" finished-at="2025-09-26T12:28:53 IST" duration-ms="48549" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[✅ Signup Email: testuser1758869884841@example.com]]>
+            </line>
+            <line>
+              <![CDATA[✅ Auto-Populated Email: testuser1758869884841@example.com]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- validSignUpTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SignUpTest@8c3b9d]" started-at="2025-09-26T12:28:53 IST" name="tearDown" finished-at="2025-09-26T12:28:53 IST" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SignUpTest -->
+    </test> <!-- BraveTests -->
+  </suite> <!-- AutomationSuite -->
 </testng-results>

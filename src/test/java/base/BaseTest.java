@@ -83,33 +83,53 @@ public class BaseTest {
             driver = new FirefoxDriver(options);
         }
 
-        // ✅ Edge
+     // ✅ Edge
         else if (BROWSER.equalsIgnoreCase("edge")) {
 
             boolean isCI = System.getenv("GITHUB_ACTIONS") != null; // GitHub Actions detect
 
             if (isCI) {
-                // CI environment → WebDriverManager auto download
-                WebDriverManager.edgedriver().setup();
+                throw new RuntimeException("❌ Edge browser is disabled on GitHub Actions. Run locally in Eclipse.");
             } else {
                 // Local environment → use locally installed driver
                 String edgeDriverPath = "C:\\Drivers\\edgedriver_win64\\msedgedriver.exe"; // apna local path
                 System.setProperty("webdriver.edge.driver", edgeDriverPath);
-            }
 
-            EdgeOptions options = new EdgeOptions();
-            options.setAcceptInsecureCerts(true);
-            options.addArguments("--disable-popup-blocking");
-            options.addArguments("--disable-notifications");
+                EdgeOptions options = new EdgeOptions();
+                options.setAcceptInsecureCerts(true);
+                options.addArguments("--disable-popup-blocking");
+                options.addArguments("--disable-notifications");
 
-            if (isHeadless) {
-                options.addArguments("--headless=new", "--window-size=1920,1080");
-                options.addArguments("--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
+                if (isHeadless) {
+                    options.addArguments("--headless=new", "--window-size=1920,1080");
+                    options.addArguments("--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
+                }
+                driver = new EdgeDriver(options);
             }
-            driver = new EdgeDriver(options);
         }
 
-        else {
+        // ✅ Brave (Chrome base)
+        else if (BROWSER.equalsIgnoreCase("brave")) {
+
+            boolean isCI = System.getenv("GITHUB_ACTIONS") != null; // GitHub Actions detect
+
+            if (isCI) {
+                throw new RuntimeException("❌ Brave browser is disabled on GitHub Actions. Run locally in Eclipse.");
+            } else {
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions options = new ChromeOptions();
+                options.setAcceptInsecureCerts(true);
+
+                // Brave binary ka path dena padega
+                options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+
+                if (isHeadless) {
+                    options.addArguments("--headless=new");
+                    options.addArguments("--window-size=1920,1080");
+                }
+                driver = new ChromeDriver(options);
+            }
+        } else {
             throw new RuntimeException("Invalid Browser: " + BROWSER);
         }
 

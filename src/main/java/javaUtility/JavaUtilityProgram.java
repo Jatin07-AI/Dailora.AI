@@ -62,36 +62,48 @@ public class JavaUtilityProgram {
 		return firstName + " " + lastName;
 	}
 	
-	public static class generateRandomPassword { 
+
+
+	public static class generateRandomPassword {
 	    private final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	    private final String LOWER = "abcdefghijklmnopqrstuvwxyz";
 	    private final String DIGIT = "0123456789";
 
 	    public String getRandomPass(int length) {
-	        String combined = UPPER + LOWER + DIGIT; // $ ko yaha se hata diya
+	        String combined = UPPER + LOWER + DIGIT;
 	        SecureRandom rn = new SecureRandom();
 	        StringBuilder sb = new StringBuilder();
 
-	        // pehle (length-1) characters generate kar lete hai
-	        for (int i = 0; i < length - 1; i++) {
+	        // Pehle (length - 4) characters generate kar lete hai
+	        for (int i = 0; i < length - 4; i++) {
 	            int index = rn.nextInt(combined.length());
 	            sb.append(combined.charAt(index));
 	        }
 
-	        // ab $ ko ek random position pe insert kar do
-	        int pos = rn.nextInt(sb.length() + 1); // +1 matlab end me bhi daal sakte hai
-	        sb.insert(pos, '$');
-	        
-	     // ab numeric digit 2 ko ek random position pe insert kar do
-	        int num = rn.nextInt(sb.length() + 1); // +1 matlab end me bhi daal sakte hai
-	        sb.insert(num, '2');
+	        // ✅ Ab compulsory characters daal dete hai
+	        // ek Uppercase
+	        char upper = UPPER.charAt(rn.nextInt(UPPER.length()));
+	        // ek Lowercase
+	        char lower = LOWER.charAt(rn.nextInt(LOWER.length()));
+	        // ek digit (yaha '2')
+	        char digit = '2';
+	        // ek special char
+	        char special = '$';
+
+	        // Random positions par insert kar dete hai
+	        sb.insert(rn.nextInt(sb.length() + 1), upper);
+	        sb.insert(rn.nextInt(sb.length() + 1), lower);
+	        sb.insert(rn.nextInt(sb.length() + 1), digit);
+	        sb.insert(rn.nextInt(sb.length() + 1), special);
 
 	        return sb.toString();
 	    }
 	}
 
+	}
+
 	
-}
+
 
 
 

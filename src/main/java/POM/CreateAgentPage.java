@@ -81,8 +81,8 @@ public class CreateAgentPage {
 	@FindBy(xpath = "//*[name()='svg']//*[name()='path' and @d='m7 15 5 5 5-5']")
 	private WebElement countryDropdown;
 
-	@FindBy(xpath = "//span[text()='India']")
-	private WebElement countryIndiaOption;
+	@FindBy(xpath = "//div[@data-value='United States']")
+	private WebElement countryUSAOption;
 
 	@FindBy(name = "phone")
 	private WebElement phoneNumberInput;
@@ -132,14 +132,14 @@ public class CreateAgentPage {
 	public void createAgent() throws InterruptedException {
 		// Click Create Agent
 		Reporter.log("STEP: Wait and click on Create Agent button", true);
-		wb.waitForPageLoad(driver, 20);
+		wb.waitForPageLoad(driver, 50);
 		wb.visibilityOfElement(driver, createAgentButton);
 		wb.mouseClickOnWebElement(driver, createAgentButton);
 		Reporter.log("RESULT: Create Agent button clicked successfully", true);
 
 		// Select Agent Template
 		Reporter.log("STEP: Select agent template", true);
-		wb.visibilityOfElement(driver, selectAgentTemplateButton);
+		wb.elementxTobeClickable(driver, selectAgentTemplateButton);
 		wb.mouseClickOnWebElement(driver, selectAgentTemplateButton);
 		Reporter.log("RESULT: Agent template selected successfully", true);
 
@@ -197,11 +197,11 @@ public class CreateAgentPage {
 		wb.elementxTobeClickable(driver, countryDropdown);
 		wb.mouseClickOnWebElement(driver, countryDropdown);
 		Reporter.log("ACTION: Clicked on Country dropdown", true);
-		wb.visibilityOfElement(driver, countryIndiaOption);
-		countryIndiaOption.click();
+		wb.visibilityOfElement(driver, countryUSAOption);
+		countryUSAOption.click();
 		Reporter.log("ACTION: Selected India as country", true);
 		wb.visibilityOfElement(driver, phoneNumberInput);
-		phoneNumberInput.sendKeys("7383219587");
+		phoneNumberInput.sendKeys("206 237 5589");
 		Reporter.log("ACTION: Entered phone number", true);
 		wb.visibilityOfElement(driver, savePhoneButton);
 		savePhoneButton.click();
