@@ -145,7 +145,7 @@ public class BaseTest {
         System.out.println("🕒 Test Started At: " + jp.getCurrentDateAndTime() + " | Browser: " + browserName);
     }
 
-   // @AfterMethod
+    @AfterMethod
     public void tearDown() {
         if (getDriver() != null) {
             getDriver().quit();
