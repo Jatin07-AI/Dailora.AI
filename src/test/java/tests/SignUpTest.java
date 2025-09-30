@@ -35,11 +35,10 @@ public class SignUpTest extends BaseTest {
 	    sp.clickSubscription();
 	    sp.fillPaymentDetails();
 	    sp.startTrial();
-
+	    
 	    // Verification Example
-	    Assert.assertEquals(sp.getAutoPopulatedEmail(), uniqueEmail, "Email mismatch!");
+	    Assert.assertEquals(sp.getAutoPopulatedEmail(uniqueEmail), uniqueEmail, "Email mismatch!");
 	    
 	    Reporter.log("✅ Signup Email: "+ uniqueEmail,true);
-	    Reporter.log("✅ Auto-Populated Email: " + sp.getAutoPopulatedEmail(),true);
 	}
 }

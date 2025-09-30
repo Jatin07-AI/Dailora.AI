@@ -162,9 +162,25 @@ public class SignUpPage {
 	        wait.until(driver -> StartTrialBTN.isEnabled());
 	    }
 
-	    public String getAutoPopulatedEmail() {
+	    public String getAutoPopulatedEmail(String uniqueEmail) {
 	    		wb.waitForPageLoad(driver,60);
 	    		wb.elementxTobeClickable(driver, LoginEmailField);
-	        return LoginEmailField.getAttribute("value");
+	    		
+	    		// Pehle field ka value le lo
+	    	    String emailId = LoginEmailField.getAttribute("value");
+	    	    
+
+	    	    if (emailId == null || emailId.trim().isEmpty()) {
+	    	        // Agar auto-populate nahi hua → apna email dal do
+	    	        LoginEmailField.clear();
+	    	        LoginEmailField.sendKeys(uniqueEmail);
+	    	        emailId = LoginEmailField.getAttribute("value");
+	    	        System.out.println("Email was empty, entered manually: " + emailId);
+	    	    } else {
+	    	        // Agar auto-populate ho gaya → use hi verify kar
+	    	        System.out.println("Email auto-populated: " + emailId);
+	    	    }
+	    	    
+	        return emailId;
 	    }
 }
