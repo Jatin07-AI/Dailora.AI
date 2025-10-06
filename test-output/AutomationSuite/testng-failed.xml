@@ -2,37 +2,43 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [AutomationSuite]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="listeners.TestListener"/>
+    <listener class-name="listeners.ListenerImplementation"/>
   </listeners>
-  <test thread-count="5" name="EdgeTests(failed)">
-    <parameter name="browser" value="edge"/>
+  <test thread-count="5" name="ChromeTests(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="tests.SignUpTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="validSignUpTest"/>
-        </methods>
-      </class> <!-- tests.SignUpTest -->
-    </classes>
-  </test> <!-- EdgeTests(failed) -->
-  <test thread-count="5" name="BraveTests(failed)">
-    <parameter name="browser" value="Brave"/>
-    <classes>
-      <class name="tests.SignUpTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="validSignUpTest"/>
-        </methods>
-      </class> <!-- tests.SignUpTest -->
       <class name="tests.CreateAgentTest">
         <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
+          <include name="afterMethod"/>
           <include name="createAndDeleteAgentTest"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
         </methods>
       </class> <!-- tests.CreateAgentTest -->
     </classes>
-  </test> <!-- BraveTests(failed) -->
+  </test> <!-- ChromeTests(failed) -->
+  <test thread-count="5" name="FirefoxTests(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tests.CreateAgentTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="createAndDeleteAgentTest"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- tests.CreateAgentTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="loginTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- FirefoxTests(failed) -->
 </suite> <!-- Failed suite [AutomationSuite] -->

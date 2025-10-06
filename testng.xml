@@ -1,17 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="AutomationSuite">
 
-    <listeners>
-        <listener class-name="listeners.TestListener"/>
-    </listeners>
+   <listeners>
+<listener class-name="listeners.ListenerImplementation"></listener>
+</listeners>
 
     <!-- Chrome Tests -->
 	    <test name="ChromeTests">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.SignUpTest"/>
-            <class name="tests.CreateAgentTest"/>
+             <class name="tests.SignUpTest"/>
+            <class name="tests.CreateAgentTest"/> 
         </classes>
     </test> 
 
@@ -20,8 +20,8 @@
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.SignUpTest"/>
-            <class name="tests.CreateAgentTest"/>
+             <class name="tests.SignUpTest"/>
+            <class name="tests.CreateAgentTest"/> 
         </classes>
     </test> 
     	

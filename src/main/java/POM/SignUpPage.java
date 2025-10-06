@@ -112,7 +112,7 @@ public class SignUpPage {
 		wb.visibilityOfElement(driver, SignUpLink);
 		SignUpLink.click();
 		AcceptAllBTN.click();
-	}
+	} 
 	
 	public void fillSignupPage(String name,String email,String phone,String password) {
 		NameField.sendKeys(name);

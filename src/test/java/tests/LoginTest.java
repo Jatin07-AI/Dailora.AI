@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import POM.LoginPage;
@@ -10,7 +11,7 @@ import dataproviders.DataProviderUtility;
 import fileUtility.PropertyFileUtility;
 import webDriverUtility.WebDriverUtilityProgram;
 
-
+@Listeners(listeners.ListenerImplementation.class)
 public class LoginTest extends BaseTest {
 	
 	@Test(dataProvider = "loginData", dataProviderClass = DataProviderUtility.class)
@@ -18,7 +19,7 @@ public class LoginTest extends BaseTest {
 	    PropertyFileUtility pp = new PropertyFileUtility();
 	    String URL = pp.toGetDataFromPropertiesFile("url");
 
-	    WebDriver driver = BaseTest.getDriver();
+	    WebDriver driver = BaseTest.sdriver;
 	    WebDriverUtilityProgram wb = new WebDriverUtilityProgram();
 	    wb.implicitlyWait(driver);
 	    driver.get(URL);

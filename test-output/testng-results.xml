@@ -17,7 +17,7 @@
       <![CDATA[❌ Login Failed: Invalid Email & Invalid Password]]>
     </line>
     <line>
-      <![CDATA[✅ Signup Email: testuser1759211273682@example.com]]>
+      <![CDATA[✅ Signup Email: testuser1759750542785@example.com]]>
     </line>
     <line>
       <![CDATA[STEP: Enter email and password]]>
@@ -116,7 +116,7 @@
       <![CDATA[❌ Login Failed: Invalid Email & Invalid Password]]>
     </line>
     <line>
-      <![CDATA[✅ Signup Email: testuser1759211531260@example.com]]>
+      <![CDATA[✅ Signup Email: testuser1759750782000@example.com]]>
     </line>
     <line>
       <![CDATA[STEP: Enter email and password]]>
@@ -200,12 +200,12 @@
       <![CDATA[Deleted Agent Successfully]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-09-30T11:16:58 IST" name="AutomationSuite" finished-at="2025-09-30T11:25:24 IST" duration-ms="506339">
+  <suite started-at="2025-10-06T17:04:56 IST" name="AutomationSuite" finished-at="2025-10-06T17:13:00 IST" duration-ms="484246">
     <groups>
     </groups>
-    <test started-at="2025-09-30T11:16:58 IST" name="ChromeTests" finished-at="2025-09-30T11:21:01 IST" duration-ms="242544">
+    <test started-at="2025-10-06T17:04:56 IST" name="ChromeTests" finished-at="2025-10-06T17:08:43 IST" duration-ms="226755">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:16:58 IST" name="setup" finished-at="2025-09-30T11:17:02 IST" duration-ms="3494" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:04:56 IST" name="beforeClass" finished-at="2025-10-06T17:04:59 IST" duration-ms="3239" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -214,14 +214,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
+                <![CDATA[org.testng.TestRunner@4b62f1ba]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:02 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:17:38 IST" duration-ms="36267" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:04:59 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:05:35 IST" duration-ms="36257" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -248,23 +248,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:38 IST" name="setup" finished-at="2025-09-30T11:17:40 IST" duration-ms="2420" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:40 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:17:42 IST" duration-ms="1338" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:05:35 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:05:37 IST" duration-ms="1485" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -288,23 +272,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:42 IST" name="setup" finished-at="2025-09-30T11:17:44 IST" duration-ms="2419" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:44 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:17:46 IST" duration-ms="1550" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:05:37 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:05:38 IST" duration-ms="1203" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -328,23 +296,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:46 IST" name="setup" finished-at="2025-09-30T11:17:49 IST" duration-ms="2865" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@2baa8d82]" started-at="2025-09-30T11:17:49 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:17:50 IST" duration-ms="1517" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:05:38 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:05:39 IST" duration-ms="1335" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -368,9 +320,13 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.LoginTest@24aed80c]" started-at="2025-10-06T17:05:39 IST" name="afterClass" finished-at="2025-10-06T17:05:40 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.CreateAgentTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@476aac9]" started-at="2025-09-30T11:18:42 IST" name="setup" finished-at="2025-09-30T11:18:45 IST" duration-ms="3356" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@2925bf5b]" started-at="2025-10-06T17:06:25 IST" name="beforeClass" finished-at="2025-10-06T17:06:28 IST" duration-ms="2400" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -379,14 +335,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
+                <![CDATA[org.testng.TestRunner@4b62f1ba]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@476aac9]" started-at="2025-09-30T11:18:45 IST" name="createAndDeleteAgentTest" finished-at="2025-09-30T11:21:01 IST" duration-ms="135405" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@2925bf5b]" started-at="2025-10-06T17:06:28 IST" name="createAndDeleteAgentTest" finished-at="2025-10-06T17:08:42 IST" duration-ms="134794" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP: Enter email and password]]>
@@ -471,9 +427,13 @@
             </line>
           </reporter-output>
         </test-method> <!-- createAndDeleteAgentTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.CreateAgentTest@2925bf5b]" started-at="2025-10-06T17:08:42 IST" name="afterClass" finished-at="2025-10-06T17:08:43 IST" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- tests.CreateAgentTest -->
       <class name="tests.SignUpTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@54107f42]" started-at="2025-09-30T11:17:50 IST" name="setup" finished-at="2025-09-30T11:17:53 IST" duration-ms="3041" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@45c7e403]" started-at="2025-10-06T17:05:40 IST" name="beforeClass" finished-at="2025-10-06T17:05:42 IST" duration-ms="2675" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -482,25 +442,33 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@41861964]]>
+                <![CDATA[org.testng.TestRunner@4b62f1ba]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@54107f42]" started-at="2025-09-30T11:17:53 IST" name="validSignUpTest" finished-at="2025-09-30T11:18:42 IST" duration-ms="48758" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@45c7e403]" started-at="2025-10-06T17:05:42 IST" name="validSignUpTest" finished-at="2025-10-06T17:06:25 IST" duration-ms="42751" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[✅ Signup Email: testuser1759211273682@example.com]]>
+              <![CDATA[✅ Signup Email: testuser1759750542785@example.com]]>
             </line>
           </reporter-output>
         </test-method> <!-- validSignUpTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.SignUpTest@45c7e403]" started-at="2025-10-06T17:06:25 IST" name="afterClass" finished-at="2025-10-06T17:06:25 IST" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- tests.SignUpTest -->
     </test> <!-- ChromeTests -->
-    <test started-at="2025-09-30T11:21:01 IST" name="FirefoxTests" finished-at="2025-09-30T11:25:24 IST" duration-ms="263739">
+    <test started-at="2025-10-06T17:08:43 IST" name="FirefoxTests" finished-at="2025-10-06T17:13:00 IST" duration-ms="257465">
       <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:01 IST" name="setup" finished-at="2025-09-30T11:21:08 IST" duration-ms="6977" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:04:56 IST" name="beforeSuite" finished-at="2025-10-06T17:04:56 IST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:08:43 IST" name="beforeClass" finished-at="2025-10-06T17:08:52 IST" duration-ms="8995" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -509,14 +477,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
+                <![CDATA[org.testng.TestRunner@39dce2df]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:08 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:21:44 IST" duration-ms="36594" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:08:52 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:09:30 IST" duration-ms="38101" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -543,23 +511,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:44 IST" name="setup" finished-at="2025-09-30T11:21:50 IST" duration-ms="5618" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:50 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:21:52 IST" duration-ms="1672" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:09:30 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:09:31 IST" duration-ms="1671" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -583,23 +535,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:52 IST" name="setup" finished-at="2025-09-30T11:21:57 IST" duration-ms="5317" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:57 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:21:59 IST" duration-ms="1669" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:09:31 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:09:33 IST" duration-ms="1431" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -623,23 +559,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:21:59 IST" name="setup" finished-at="2025-09-30T11:22:04 IST" duration-ms="4971" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@726386ed]" started-at="2025-09-30T11:22:04 IST" name="loginTest" data-provider="loginData" finished-at="2025-09-30T11:22:05 IST" duration-ms="1623" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:09:33 IST" name="loginTest" data-provider="loginData" finished-at="2025-10-06T17:09:34 IST" duration-ms="1367" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -663,9 +583,17 @@
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:09:34 IST" name="afterClass" finished-at="2025-10-06T17:09:35 IST" duration-ms="1090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tests.LoginTest@5c90e579]" started-at="2025-10-06T17:13:00 IST" name="afterSuite" finished-at="2025-10-06T17:13:00 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.CreateAgentTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@14bb2297]" started-at="2025-09-30T11:22:57 IST" name="setup" finished-at="2025-09-30T11:23:03 IST" duration-ms="5955" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.CreateAgentTest@6f45df59]" started-at="2025-10-06T17:10:31 IST" name="beforeClass" finished-at="2025-10-06T17:10:36 IST" duration-ms="5821" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -674,14 +602,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
+                <![CDATA[org.testng.TestRunner@39dce2df]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@14bb2297]" started-at="2025-09-30T11:23:03 IST" name="createAndDeleteAgentTest" finished-at="2025-09-30T11:25:24 IST" duration-ms="141538" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="createAndDeleteAgentTest()[pri:0, instance:tests.CreateAgentTest@6f45df59]" started-at="2025-10-06T17:10:36 IST" name="createAndDeleteAgentTest" finished-at="2025-10-06T17:12:59 IST" duration-ms="142425" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[STEP: Enter email and password]]>
@@ -766,9 +694,13 @@
             </line>
           </reporter-output>
         </test-method> <!-- createAndDeleteAgentTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.CreateAgentTest@6f45df59]" started-at="2025-10-06T17:12:59 IST" name="afterClass" finished-at="2025-10-06T17:13:00 IST" duration-ms="1207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- tests.CreateAgentTest -->
       <class name="tests.SignUpTest">
-        <test-method is-config="true" signature="setup(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@649f2009]" started-at="2025-09-30T11:22:05 IST" name="setup" finished-at="2025-09-30T11:22:11 IST" duration-ms="5545" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,org.testng.ITestContext)[pri:0, instance:tests.SignUpTest@58ea606c]" started-at="2025-10-06T17:09:35 IST" name="beforeClass" finished-at="2025-10-06T17:09:41 IST" duration-ms="6214" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -777,20 +709,24 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@4db8b888]]>
+                <![CDATA[org.testng.TestRunner@39dce2df]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@649f2009]" started-at="2025-09-30T11:22:11 IST" name="validSignUpTest" finished-at="2025-09-30T11:22:57 IST" duration-ms="46230" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="validSignUpTest()[pri:1, instance:tests.SignUpTest@58ea606c]" started-at="2025-10-06T17:09:41 IST" name="validSignUpTest" finished-at="2025-10-06T17:10:29 IST" duration-ms="47919" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[✅ Signup Email: testuser1759211531260@example.com]]>
+              <![CDATA[✅ Signup Email: testuser1759750782000@example.com]]>
             </line>
           </reporter-output>
         </test-method> <!-- validSignUpTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.SignUpTest@58ea606c]" started-at="2025-10-06T17:10:29 IST" name="afterClass" finished-at="2025-10-06T17:10:31 IST" duration-ms="1212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
       </class> <!-- tests.SignUpTest -->
     </test> <!-- FirefoxTests -->
   </suite> <!-- AutomationSuite -->

@@ -19,7 +19,7 @@ public class CreateAgentPage {
 
 	WebDriver driver;
 
-	public CreateAgentPage(WebDriver driver) {
+	public CreateAgentPage(WebDriver driver) { 
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -42,7 +42,7 @@ public class CreateAgentPage {
 	private WebElement createAgentButton;
 
 	@FindAll({@FindBy(xpath = "//h3[text()='Dental Booking Assistant Agent']"),
-	@FindBy(xpath = "//p[contains(text(),'Helps patients book dental')]"),
+		@FindBy(xpath = "//p[contains(text(),'Helps patients book dental appointments at KD Hospital.')]")
 	})
 	private WebElement selectAgentTemplateButton;
 
@@ -123,7 +123,7 @@ public class CreateAgentPage {
 	public void loginIntoApp(String email, String password) throws InterruptedException {
 		Reporter.log("STEP: Enter email and password", true);
 		emailInput.sendKeys(email);
-		passwordInput.sendKeys(password);
+		passwordInput.sendKeys(password); 
 		loginButton.click();
 		Reporter.log("RESULT: Login successful with email: " + email, true);
 		Thread.sleep(10000);
@@ -134,13 +134,13 @@ public class CreateAgentPage {
 		Reporter.log("STEP: Wait and click on Create Agent button", true);
 		wb.waitForPageLoad(driver, 50);
 		wb.visibilityOfElement(driver, createAgentButton);
-		wb.mouseClickOnWebElement(driver, createAgentButton);
+		wb.clickElementByJS(driver, createAgentButton);
 		Reporter.log("RESULT: Create Agent button clicked successfully", true);
 
 		// Select Agent Template
 		Reporter.log("STEP: Select agent template", true);
 		wb.elementxTobeClickable(driver, selectAgentTemplateButton);
-		wb.mouseClickOnWebElement(driver, selectAgentTemplateButton);
+		wb.clickElementByJS(driver, selectAgentTemplateButton);
 		Reporter.log("RESULT: Agent template selected successfully", true);
 
 		// Assign Number

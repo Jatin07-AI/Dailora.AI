@@ -3,13 +3,14 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import POM.SignUpPage;
 import base.BaseTest;
 import fileUtility.PropertyFileUtility;
 import javaUtility.JavaUtilityProgram;
 
+@Listeners(listeners.ListenerImplementation.class)
 public class SignUpTest extends BaseTest {
 
 	@Test(priority = 1)
@@ -23,14 +24,14 @@ public class SignUpTest extends BaseTest {
 	    String phone = jp.generateUniquePhoneNumber();
 	    String pass = new JavaUtilityProgram.generateRandomPassword().getRandomPass(9);
 
-	    WebDriver driver = BaseTest.getDriver();
+	    WebDriver driver = BaseTest.sdriver;
 	    driver.get(URL);
 
 	    SignUpPage sp = new SignUpPage(driver);
 
 	    sp.openSignup();
 	    sp.fillSignupPage(randomName, uniqueEmail, phone, pass);
-	    sp.submitSignup();
+	    sp.submitSignup(); 
 
 	    sp.clickSubscription();
 	    sp.fillPaymentDetails();

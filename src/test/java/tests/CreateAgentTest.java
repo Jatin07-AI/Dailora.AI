@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import POM.CreateAgentPage;
 import base.BaseTest;
 
-@Listeners(listeners.TestListener.class)
+@Listeners(listeners.ListenerImplementation.class)
 public class CreateAgentTest extends BaseTest {
 
     @Test
@@ -23,7 +23,7 @@ public class CreateAgentTest extends BaseTest {
         String validPass   = propertyUtil.toGetDataFromPropertiesFile("validPassword");
 
         // ------------------ Launch Browser ------------------ //
-        WebDriver driver = BaseTest.getDriver();
+        WebDriver driver = BaseTest.sdriver;
         WebDriverUtilityProgram webUtil = new WebDriverUtilityProgram();
         webUtil.implicitlyWait(driver);
         driver.get(appUrl);
