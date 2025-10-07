@@ -3,8 +3,10 @@ package POM;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -53,9 +55,9 @@ public class CreateAgentPage {
 	@FindBy(xpath = "//div[text()='Select Contact Number']")
 	private WebElement contactNumberDropdown;
 
-	@FindBy(xpath = "//div[@data-value='+97233822722']")
+	@FindBy(xpath = "//span[text()='+1 567 412 2928']")
 	private WebElement contactNumberOption;
-
+	
 	@FindBy(xpath = "//button[text()='Assign']")
 	private WebElement assignButton;
 
@@ -68,6 +70,9 @@ public class CreateAgentPage {
 	// ------------------ GET A CALL ELEMENTS ------------------ //
 	@FindBy(xpath = "//button[text()='Get a Call']")
 	private WebElement getCallButton;
+	
+	@FindBy(xpath = "//span[text()='Close']")
+	private WebElement closeBTN;
 
 	@FindAll({
 	@FindBy(xpath = "//span[text()='Select Phone number']"),
@@ -75,16 +80,13 @@ public class CreateAgentPage {
     })
 	private WebElement phoneNumberDropdown;
 
-	@FindBy(xpath = "//span[text()='+972 3 382 2722']")
+	@FindBy(xpath = "//span[text()='+1 567 412 2928']")
 	private WebElement phoneNumberOption;
 
-	@FindBy(xpath = "//*[name()='svg']//*[name()='path' and @d='m7 15 5 5 5-5']")
-	private WebElement countryDropdown;
-
-	@FindBy(xpath = "//div[@data-value='United States']")
-	private WebElement countryUSAOption;
-
-	@FindBy(name = "phone")
+	@FindAll({
+	@FindBy(xpath = "//input[@placeholder='Enter your number']"),
+	@FindBy(xpath = "//input[@type='tel']")
+		})
 	private WebElement phoneNumberInput;
 
 	@FindBy(xpath = "//span[text()='Save']")
@@ -169,39 +171,35 @@ public class CreateAgentPage {
 		
 
 		// Handle dynamic popup if appears
-		try {
-		    // Wait max 5 seconds for the success message to appear
-		    wb.visibilityOfElement(driver, agentUpdatedSuccessMessage);
-		    // Wait until it disappears
-		    wb.waitForInvisibilityOfElement(driver, agentUpdatedSuccessMessage, 10);
-		    Reporter.log("Popup appeared and disappeared successfully", true);
-		} catch (Exception e) {
-		    // Popup didn't appear → just continue
-		    Reporter.log("Popup did not appear, continue execution", true);
-		}
+//		try {
+//		    // Wait max 5 seconds for the success message to appear
+//		    wb.visibilityOfElement(driver, agentUpdatedSuccessMessage);
+//		    // Wait until it disappears
+//		    wb.waitForInvisibilityOfElement(driver, agentUpdatedSuccessMessage, 10);
+//		    Reporter.log("Popup appeared and disappeared successfully", true);
+//		} catch (Exception e) {
+//		    // Popup didn't appear → just continue
+//		    Reporter.log("Popup did not appear, continue execution", true);
+//		}
 
 
 		// Get a Call
 		driver.navigate().refresh();
 		wb.waitForPageLoad(driver, 20);
 		Reporter.log("STEP: Configure Get a Call", true);
-		wb.visibilityOfElement(driver, getCallButton);
+		wb.elementxTobeClickable(driver, getCallButton);
 		wb.mouseClickOnWebElement(driver, getCallButton);
 		Reporter.log("ACTION: Clicked on Get a Call button", true);
-		wb.visibilityOfElement(driver,phoneNumberDropdown);
-		wb.mouseClickOnWebElement(driver, phoneNumberDropdown);
+		wb.elementxTobeClickable(driver,phoneNumberDropdown);
+		wb.clickElementByJS(driver, phoneNumberDropdown);
 		Reporter.log("ACTION: Clicked on Phone Number dropdown", true);
-		wb.visibilityOfElement(driver, phoneNumberOption);
-		wb.mouseClickOnWebElement(driver, phoneNumberOption);
+		wb.elementxTobeClickable(driver, phoneNumberOption);
+		phoneNumberOption.click();;
 		Reporter.log("ACTION: Selected phone number from options", true);
-		wb.elementxTobeClickable(driver, countryDropdown);
-		wb.mouseClickOnWebElement(driver, countryDropdown);
-		Reporter.log("ACTION: Clicked on Country dropdown", true);
-		wb.visibilityOfElement(driver, countryUSAOption);
-		countryUSAOption.click();
-		Reporter.log("ACTION: Selected India as country", true);
+		
+		Thread.sleep(5000);
 		wb.visibilityOfElement(driver, phoneNumberInput);
-		phoneNumberInput.sendKeys("206 237 5589");
+		phoneNumberInput.sendKeys("+18783096585");
 		Reporter.log("ACTION: Entered phone number", true);
 		wb.visibilityOfElement(driver, savePhoneButton);
 		savePhoneButton.click();

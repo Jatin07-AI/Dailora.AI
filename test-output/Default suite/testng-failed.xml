@@ -5,9 +5,11 @@
     <classes>
       <class name="tests.CreateAgentTest">
         <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
           <include name="createAndDeleteAgentTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
         </methods>
       </class> <!-- tests.CreateAgentTest -->
     </classes>
